@@ -1,13 +1,13 @@
 <?php
 
     //SI L'UTILISATEUR N'EST PAS CONNECTE, IL EST REDIRIGER VERS LA PAGE DE CONNEXION
-    if (!isset($_SESSION['username']))
+    if (isset($_SESSION['username']))
     {
         header('Location: index.php?page=connection');
         exit;
     } 
 
-    if ($_SESSION['status'] === "prof") {
+    if (isset($_SESSION['status']) && $_SESSION['status'] === "prof") {
         $notifs = checknotif_SELECT();
 
 
@@ -18,6 +18,7 @@
     }
 
     require(dirname(__FILE__).'/../views/home_v.php');
+    require(dirname(__FILE__).'/../views/template.php');
     
 
     

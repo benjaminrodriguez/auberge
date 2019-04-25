@@ -13,7 +13,7 @@
         if(isset($_SESSION['username']))  header('Location: index.php?page=home');
         else require_once('Controllers/connection_Controllers.php');
     }
-    else if (isset($_GET['page']) && !empty($_GET['page']) && isset($_SESSION['id'])) 
+    else if (isset($_GET['page']) && !empty($_GET['page'])) 
     {
         if ($_GET['page'] == 'dc') //deconnection
         {
@@ -21,7 +21,7 @@
         }
         else if ($_GET['page'] == 'home') //accueil
         {
-            require_once('Controllers/home_Controllers.php');
+            require_once('Controllers/home_c.php');
         }
         else if ($_GET['page'] == 'profile') //profil
         {
@@ -29,7 +29,7 @@
         }        
         else
         {
-            header('Location: index.php?page=connection');
+            header('Location: index.php?page=home');
             exit();
         }
     }
