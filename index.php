@@ -30,8 +30,7 @@
         }        
         else
         {
-            header('Location: index.php?page=home');
-            exit();
+            require_once('views/404.php');
         }
     }
     else 
