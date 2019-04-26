@@ -16,17 +16,29 @@
     }
     else if (isset($_GET['page']) && !empty($_GET['page'])) 
     {
-        if ($_GET['page'] == 'dc') //deconnection
+        // DECONNECTION
+
+        if ($_GET['page'] == 'dc')
         {
             require_once('Controllers/php/disconnect.php');
         }
-        else if ($_GET['page'] == 'home') //accueil
+        // ACCUEIL
+
+        else if ($_GET['page'] == 'home')
         {
             require_once('Controllers/home_c.php');
         }
-        else if ($_GET['page'] == 'profile') //profil
+        // PROFIL
+
+        else if ($_GET['page'] == 'profile')
         {
             require_once('Controllers/profile_Controllers.php');
+        }    
+        // NOUVEAU PROJET
+    
+        else if ($_GET['page'] == 'create_projet') 
+        {
+            require_once('Controllers/create_project_c.php');
         }        
         else
         {

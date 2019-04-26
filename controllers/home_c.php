@@ -19,9 +19,4 @@
 
     require(dirname(__FILE__).'/../views/home_v.php');
     require(dirname(__FILE__).'/../views/template.php');
-    
-
-    
-
-
 ?>
