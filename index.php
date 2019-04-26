@@ -11,7 +11,8 @@
     if ($_GET['page'] == 'connection')
     {
         if(isset($_SESSION['username']))  header('Location: index.php?page=home');
-        else require_once('Controllers/connection_Controllers.php');
+        //else require_once('Controllers/connection_Controllers.php');
+        else require_once('controllers/home_c.php');
     }
     else if (isset($_GET['page']) && !empty($_GET['page'])) 
     {
