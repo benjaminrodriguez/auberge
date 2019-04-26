@@ -28,57 +28,15 @@
   </head>
   <body style="background-image: url('./views/img/foret.jpg'); background-size: cover;">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    
-    
-    <div class="col-sm-7">
-        <a class="navbar-brand" href="?"><img src="./views/img/logo2.png" width="145" height="100" class="d-inline-block align-middle" alt="">L'Auberge</a>
-    </div>
-    <?php 
-    if (isset($_SESSION['type']) && $_SESSION['type'] === "prof") {
-      ?>
-      <div class="col-sm-1" style="line-height: 0.5; text-align: center; padding-bottom: 16px; padding-top: 15px;border-radius: 20px 20px 0px 0px; margin-bottom: -20px; background: rgba(75, 137, 218, 0.75); margin-right: 35px;">
-        <a href="?" style="color: white;"><img src="./img/books.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Gestion</a>
-      </div>
-      <?php
-    } else {
-      ?>
-      <div class="col-sm-1">
-      </div>
-
-      <?php
-    }
-    ?>
-
-    <div class="col-sm-1" style="line-height: 0.5; text-align: center; padding-bottom: 16px; padding-top: 15px;border-radius: 20px 20px 0px 0px;
-     margin-bottom: -20px; background: rgba(76, 175, 80, 0.75)">
-    <a href="?" style="color: white;"><img src="./views/img/books.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Les Projets</a>
-    </div>
-    <div class="col-sm-1">
-    <img src=<?php echo "./views/img/books.png"; //echo $_SESSION['picture']; ?> width="69px" height="69px" class="d-inline-block align-middle" style="float: right;border-radius: 25%" alt="">
-    </div>
-    <div class="col-sm-2" style="float: left">
-    <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style ="padding=0px">
-    <?php echo  "test"; // $_SESSION['username']; ?>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="index.php?page=profile&menu=username">Changer pseudo</a>
-          <a class="dropdown-item" href="index.php?page=profile&menu=password">Changer mdp</a>
-          <a class="dropdown-item" href="index.php?page=profile&menu=picture">Changer image profile</a>
-          <a class="dropdown-item" href="index.php?page=profile&menu=horaires">Horaires</a>
-          <a class="dropdown-item" href="index.php?page=profile&menu=dc">Deconnexion</a>
-    </div>
-  </div>
-</nav>
     <form action="" method="POST" class="form-example">
                         <div class="form-example">
                             <label for="nameProject">Nom du projet : </label>
                             <input type="text" name="nameProject" id="nameProject" required>
                         </div>
-                        <div class="form-example">
-                            <label for="describeProject">Description du projet </label>
-                            <input type="text-area" name="describeProject" id="describeProject" required>
-                        </div>
+                        <textarea id="describeProject" name="describeProject"
+                        rows="5" cols="33">
+                        Description du Projet                        
+                        </textarea>
                         <div class="form-example">
                             <input type="submit" value="Créer Projet !">
                         </div>
