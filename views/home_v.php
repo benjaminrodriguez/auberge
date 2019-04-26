@@ -1,7 +1,7 @@
 <?php $title='Accueil';  ?>
 <?php ob_start(); ?>
 
-<a href="index.php?page=newprojet"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Creer Projet</button></a>
+<a href="index.php?page=create_projet"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Creer Projet</button></a>
 
 
 
