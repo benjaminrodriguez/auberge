@@ -24,7 +24,7 @@
                   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
         }
     </style>
-    <title>Eval</title>
+    <title>Créer projet</title>
   </head>
   <body style="background-image: url('./views/img/foret.jpg'); background-size: cover;">
 
