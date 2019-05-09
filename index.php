@@ -11,7 +11,7 @@
     if ($_GET['page'] == 'connection')
     {
         if(isset($_SESSION['username']))  header('Location: index.php?page=home');
-        //else require_once('Controllers/connection_Controllers.php');
+        //else require_once('controllers/connection_Controllers.php');
         else require_once('controllers/home_c.php');
     }
     else if (isset($_GET['page']) && !empty($_GET['page'])) 
@@ -20,19 +20,19 @@
 
         if ($_GET['page'] == 'dc')
         {
-            require_once('Controllers/php/disconnect.php');
+            require_once('controllers/php/disconnect.php');
         }
         // ACCUEIL
 
         else if ($_GET['page'] == 'home')
         {
-            require_once('Controllers/home_c.php');
+            require_once('controllers/home_c.php');
         }
         // PROFIL
 
         else if ($_GET['page'] == 'profile')
         {
-            require_once('Controllers/profile_Controllers.php');
+            require_once('controllers/profile_Controllers.php');
         }    
         // NOUVEAU PROJET
     
@@ -44,6 +44,16 @@
         {
             require_once('controllers/prop_c.php');
         }        
+            require_once('controllers/create_project_c.php');
+        }
+        else if ($_GET['page'] == 'projets') 
+        {
+            require_once('controllers/project_c.php');
+        }            
+        else if ($_GET['page'] == 'gestion') 
+        {
+            require_once('controllers/gestion_c.php');
+        }            
         else
         {
             require_once('views/404.php');
