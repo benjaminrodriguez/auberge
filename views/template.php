@@ -53,12 +53,12 @@
 
     <div class="col-sm-1" style="line-height: 0.5; text-align: center; padding-bottom: 1%; padding-top: 1%;border-radius: 20px 20px 0px 0px;
      margin-bottom: -20px; background: rgba(76, 175, 80, 0.75)">
-    <a href="?page=projets" style="color: white;"><img src="./views/img/books.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Les Projets</a>
+    <a href="?page=projets" style="color: white;"><img src="./views/img/books.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Projets</a>
     </div>
     <div class="col-sm-1">
     <img src=<?php echo "./views/img/books.png"; //echo $_SESSION['picture']; ?> width="69px" height="69px" class="d-inline-block align-middle" style="float: right;border-radius: 25%" alt="">
     </div>
-    <div class="col-sm-2" style="float: left">
+    <div class="col-sm-1" style="float: left">
     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style ="padding=0px">
     <?php echo  "test"; // $_SESSION['username']; ?>
         </a>

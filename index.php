@@ -44,7 +44,9 @@
         {
             require_once('controllers/prop_c.php');
         }        
-            require_once('controllers/create_project_c.php');
+        else if ($_GET['page'] == 'create_projet') 
+        {
+            require_once('Controllers/create_project_c.php');
         }
         else if ($_GET['page'] == 'projets') 
         {
@@ -59,6 +61,7 @@
             require_once('views/404.php');
         }
     }
+
     else 
     {
         header('Location: index.php?page=connection');
