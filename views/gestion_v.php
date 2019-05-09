@@ -5,7 +5,12 @@
   <h5 class="card-header">PROJETS S?</h5>
   <div class="card-body">
    
-    <p class="card-text">Voici les projets de ce semestre</p>
+    Voici les projets de ce semestre
+    <div style="float: right;">
+                <a href="?page=create_projet"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Creer Projet</button></a>
+    </div>
+    <br><br>
+    
     <!-- menu -->
     <div class="container">
         <div class="row align-items-start">
@@ -24,6 +29,39 @@
             <div class="col">
               
             </div>
+            <div class="col">
+              
+              </div>
+              <div class="col">
+              
+              </div>
+        </div>
+
+        <br>
+        <div class="row align-items-start">
+            <div class="col">
+            Auberge
+            </div>
+            <div class="col">
+            Hergeur
+            </div>
+            <div class="col">
+            Y B E
+            </div>
+            <div class="col">
+            In'tech
+            </div>
+            <div class="col">
+                <a href="#" class="btn btn-success">voir</a> 
+            </div>
+            <div class="col">
+               <a href="#" class="btn btn-primary">modifier</a>
+            </div>
+            <div class="col">
+                <a href="#" class="btn btn-info">publier</a>
+            </div>
+
+
         </div>
         <br>
         <div class="row align-items-start">
@@ -40,8 +78,16 @@
             In'tech
             </div>
             <div class="col">
-                <a href="#" class="btn btn-success">voir</a> &nbsp <a href="#" class="btn btn-primary">modifier</a>
+                <a href="#" class="btn btn-success">voir</a> 
             </div>
+            <div class="col">
+               <a href="#" class="btn btn-primary">modifier</a>
+            </div>
+            <div class="col">
+                <a href="#" class="btn btn-info">publier</a>
+            </div>
+
+            
         </div>
     </div>
 

@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    //$_SESSION['role'] = "eleve";
+    $_SESSION['role'] = "eleve";
     $_SESSION['role'] = "prof";
 
     // REQUIRE LES MODELES DE BDD
