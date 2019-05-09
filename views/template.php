@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
     <style>
         .well {
           min-height: 20px;
@@ -23,7 +24,7 @@
                   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
         }
     </style>
-    <title>Eval</title>
+    <title>Auberge</title>
   </head>
   <body style="background-image: url('./views/img/foret.jpg'); background-size: cover;">
 
@@ -75,9 +76,9 @@
                 <?php 
                   //var_dump($_SESSION);
                   if (isset($content)) {
-                    echo '<div class="well">';
+                    //echo '<div class="well">';
                     echo $content; 
-                    echo '</div>';
+                    //echo '</div>';
                   } 
                 ?>
 

@@ -39,6 +39,10 @@
         else if ($_GET['page'] == 'create_projet') 
         {
             require_once('Controllers/create_project_c.php');
+        }
+        else if ($_GET['page'] == 'prop')
+        {
+            require_once('controllers/prop_c.php');
         }        
         else
         {
