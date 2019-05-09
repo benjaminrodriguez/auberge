@@ -35,7 +35,7 @@
         <a class="navbar-brand" href="?"><img src="./views/img/logo2.png" width="145" height="100" class="d-inline-block align-middle" alt="">L'Auberge</a>
     </div>
     <?php 
-    if (!isset($_SESSION['type']) //&& $_SESSION['type'] === "prof"
+    if (!isset($_SESSION['type']) && $_SESSION['role'] === "prof"
     ) {
       ?>
       <div class="col-sm-1" style="line-height: 0.5; text-align: center; padding-bottom: 1%; padding-top: 1%;border-radius: 20px 20px 0px 0px; margin-bottom: -20px; background: rgba(75, 137, 218, 0.75); margin-right: 35px;">

@@ -1,6 +1,9 @@
 <?php
     session_start();
 
+    //$_SESSION['role'] = "eleve";
+    $_SESSION['role'] = "prof";
+
     // REQUIRE LES MODELES DE BDD
     require('models/db_connect.php');
     require('models/modele_delete.php');
@@ -55,7 +58,11 @@
         else if ($_GET['page'] == 'gestion') 
         {
             require_once('controllers/gestion_c.php');
-        }            
+        }     
+        else if ($_GET['page'] == 'accepted') 
+        {
+            require_once('controllers/accepted_c.php');
+        }             
         else
         {
             require_once('views/404.php');
