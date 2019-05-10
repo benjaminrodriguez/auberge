@@ -5,13 +5,20 @@
 # --------------- FICHIER PRINCIPAL --------------
 #
 # ------------------------------------------------
-read -p "Etes vous connectez en tant que root" root
 
-if 
+#read -p "Etes vous connectez en tant que root" root
+
 
 `apt-get -y update`
 `apt-get -y upgrade`
 `apt-get -y dist-upgrade`
+
+
+# ------------------------------------------------
+# INSTALL CURL
+# ------------------------------------------------
+
+source curlInstall.sh
 
 # ------------------------------------------------
 # INSTALL GIT
@@ -35,28 +42,28 @@ source nodeJSInstall.sh
 # INSTALL PHP
 # ------------------------------------------------
 
-source phpInstall.sh
+#source phpInstall.sh
 
 # ------------------------------------------------
 # INSTALL NGINX
 # ------------------------------------------------
 
-source nginxInstall.sh
+#source nginxInstall.sh
 
 # ------------------------------------------------
 # INSTALL LETS ECRYPT
 # ------------------------------------------------
 
-source letsEncryptInstall.sh
+#source letsEncryptInstall.sh
 
 # ------------------------------------------------
 # INSTALL APACHE
 #-------------------------------------------------
 
-source apacheInstall.sh
+#source apacheInstall.sh
 
 # ------------------------------------------------
 # AFFECTATION IP VM
 # ------------------------------------------------
 
-source ipVM.sh
+#source ipVM.sh
