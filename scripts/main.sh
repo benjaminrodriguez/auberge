@@ -5,6 +5,10 @@
 # --------------- FICHIER PRINCIPAL --------------
 #
 # ------------------------------------------------
+read -p "Etes vous connectez en tant que root" root
+
+if 
+
 `apt-get -y update`
 `apt-get -y upgrade`
 `apt-get -y dist-upgrade`
