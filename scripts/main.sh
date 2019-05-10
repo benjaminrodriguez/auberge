@@ -13,37 +13,43 @@
 # INSTALL GIT
 # ------------------------------------------------
 
-source installGit.sh
+source gitInstall.sh
 
 # ------------------------------------------------
 # INSTALL SSH
 # ------------------------------------------------
 
-source installSSH.sh
+source sshInstall.sh
 
 # ------------------------------------------------
 # INSTALL NodeJS
 # ------------------------------------------------
 
-source installNodeJS.sh
+source nodeJSInstall.sh
 
 # ------------------------------------------------
 # INSTALL PHP
 # ------------------------------------------------
 
-source installPHP.sh
+source phpInstall.sh
 
 # ------------------------------------------------
 # INSTALL NGINX
 # ------------------------------------------------
 
-source installNGINX.sh
+source nginxInstall.sh
 
 # ------------------------------------------------
 # INSTALL LETS ECRYPT
 # ------------------------------------------------
 
-source installLetsEncrypt.sh
+source letsEncryptInstall.sh
+
+# ------------------------------------------------
+# INSTALL APACHE
+#-------------------------------------------------
+
+source apacheInstall.sh
 
 # ------------------------------------------------
 # AFFECTATION IP VM
