@@ -8,7 +8,7 @@
 `apt-get install -y nodejs`
 
 # ------------------------------------------------
-# INSTALLATION PAQUET
+# INSTALLATION PAQUETS
 # ------------------------------------------------
 
-`npm install --global remedial` 
+`npm install remedial` 
