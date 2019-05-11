@@ -45,23 +45,38 @@ source sshInstall.sh
 
 source phpInstall.sh
 
-# ------------------------------------------------
-# INSTALL NGINX
-# ------------------------------------------------
 
-source nginxInstall.sh
+read "1. Apache"
+read "2. NGINX"
+read -p "Quel serveur HTTP voulez vous installer ? " serveurHTTP 
 
+if [ $serveurHTTP == "apache" -o $serveurHTTP == "1" ]
+then
+
+    # ------------------------------------------------
+    # INSTALL APACHE
+    #-------------------------------------------------
+
+    source apacheInstall.sh
+
+elif [ $serveurHTTP == "nginx" -o $serveurHTTP == "2" ]
+then
+
+    # ------------------------------------------------
+    # INSTALL NGINX
+    # ------------------------------------------------
+
+    source nginxInstall.sh
+else
+    read "Veuillez séléctionne 1 ou 2"
+
+fi
 # ------------------------------------------------
 # INSTALL LETS ECRYPT
 # ------------------------------------------------
 
 source letsEncryptInstall.sh
 
-# ------------------------------------------------
-# INSTALL APACHE
-#-------------------------------------------------
-
-source apacheInstall.sh
 
 # ------------------------------------------------
 # AFFECTATION IP VM
