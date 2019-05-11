@@ -4,4 +4,4 @@
 # INSTALLATION CURL
 # ------------------------------------------------
 
-`apt install -y curl`
+`apt install -y curl > /dev/null 2>&1`

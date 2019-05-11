@@ -18,7 +18,7 @@
 # INSTALL CURL
 # ------------------------------------------------
 
-source ./curlInstall.sh
+source curlInstall.sh 
 
 # ------------------------------------------------
 # INSTALL GIT
