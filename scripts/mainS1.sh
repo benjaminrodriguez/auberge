@@ -5,47 +5,67 @@
 # --------------- FICHIER PRINCIPAL --------------
 #
 # ------------------------------------------------
+source auberge.sh
 
-#read -p "Etes vous connectez en tant que root" root
+echo ""
+echo "Verification du statut de l'utilisateur ..."
+echo ""
+
+ statut=$('whoami')
+
+    if [ $statut != root ]
+    then
+        echo ""
+        echo "Vous n'avez pas les droits nécéssaires, contactez votre administrateur .."
+        echo ""
+        sleep 2
+        exit
+    elif [ $statut = root ]
+    then
+        echo ""
+        echo "Vous avez les droits nécessaires, bienvenue dans la configuration"
+        echo ""
+    
 
 
-`apt-get -y update`
-`apt-get -y upgrade`
-`apt-get -y dist-upgrade`
+        `apt-get -y update`
+        `apt-get -y upgrade`
+        `apt-get -y dist-upgrade`
 
 
-# ------------------------------------------------
-# INSTALL CURL
-# ------------------------------------------------
+        # ------------------------------------------------
+        # INSTALL CURL
+        # ------------------------------------------------
 
-source ./curlInstall.sh
+        source ./curlInstall.sh
 
-# ------------------------------------------------
-# INSTALL GIT
-# ------------------------------------------------
+        # ------------------------------------------------
+        # INSTALL GIT
+        # ------------------------------------------------
 
-source gitInstall.sh
+        source gitInstall.sh
 
-# ------------------------------------------------
-# INSTALL VIM
-# ------------------------------------------------
+        # ------------------------------------------------
+        # INSTALL VIM
+        # ------------------------------------------------
 
-source vimInstall.sh
+        source vimInstall.sh
 
-# ------------------------------------------------
-# INSTALL SSH
-# ------------------------------------------------
+        # ------------------------------------------------
+        # INSTALL SSH
+        # ------------------------------------------------
 
-source sshInstall.sh
+        source sshInstall.sh
 
-# ------------------------------------------------
-# INSTALL NodeJS
-# ------------------------------------------------
+        # ------------------------------------------------
+        # INSTALL NodeJS
+        # ------------------------------------------------
 
-source nodeJSInstall.sh
+        source nodeJSInstall.sh
 
-# ------------------------------------------------
-# AFFECTATION IP VM
-# ------------------------------------------------
+        # ------------------------------------------------
+        # AFFECTATION IP VM
+        # ------------------------------------------------
 
-#source ipVM.sh
+        #source ipVM.sh
+fi
