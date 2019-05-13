@@ -36,7 +36,7 @@
             In'tech
             </div>
             <div class="col">
-                <a href="#" class="btn btn-success">voir</a> &nbsp <a href="#" class="btn btn-primary">associer</a>
+                <a href="#" class="btn btn-success">voir</a> &nbsp <a href="#" class="btn btn-primary">affecter</a>
             </div>
         </div>
     </div>
@@ -76,7 +76,7 @@
             In'tech
             </div>
             <div class="col">
-                <a href="#" class="btn btn-success">voir</a> &nbsp <a href="#" class="btn btn-primary">associer</a>
+                <a href="#" class="btn btn-success">voir</a> &nbsp <a href="#" class="btn btn-primary">affecter</a>
             </div>
         </div>
     </div>

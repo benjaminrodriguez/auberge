@@ -1,9 +1,7 @@
 #! /bin/bash
 
 # ------------------------------------------------
-# INSTALLATION GIT
+# INSTALLATION CURL
 # ------------------------------------------------
 
-`apt install -y git`
- 
-
+`apt install -y curl > /dev/null 2>&1`
