@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema auberge
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema auberge
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `auberge` DEFAULT CHARACTER SET utf8 ;
+USE `auberge` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `auberge`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+CREATE TABLE IF NOT EXISTS `auberge`.`user` (
   `id` INT NOT NULL,
   `mail` VARCHAR(100) NULL,
   `password` VARCHAR(100) NULL,
@@ -34,19 +34,19 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`projet`
+-- Table `auberge`.`projet`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`projet` (
-  `idprojet` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `auberge`.`projet` (
+  `id` INT NOT NULL,
   `nom` VARCHAR(45) NULL,
-  PRIMARY KEY (`idprojet`))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`groupe`
+-- Table `auberge`.`groupe`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`groupe` (
+CREATE TABLE IF NOT EXISTS `auberge`.`groupe` (
   `id` INT NOT NULL,
   `idvm` VARCHAR(45) NOT NULL,
   `port` INT NOT NULL,
@@ -59,16 +59,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`groupe` (
   INDEX `fk_groupe_projet1_idx` (`projet_id` ASC) ,
   CONSTRAINT `fk_groupe_projet1`
     FOREIGN KEY (`projet_id`)
-    REFERENCES `mydb`.`projet` (`idprojet`)
+    REFERENCES `auberge`.`projet` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`user_has_groupe`
+-- Table `auberge`.`user_has_groupe`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`user_has_groupe` (
+CREATE TABLE IF NOT EXISTS `auberge`.`user_has_groupe` (
   `user_id` INT NOT NULL,
   `groupe_id` INT NOT NULL,
   `id` INT NOT NULL,
@@ -77,12 +77,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`user_has_groupe` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_user_has_projet_user`
     FOREIGN KEY (`user_id`)
-    REFERENCES `mydb`.`user` (`id`)
+    REFERENCES `auberge`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_has_projet_projet1`
     FOREIGN KEY (`groupe_id`)
-    REFERENCES `mydb`.`groupe` (`id`)
+    REFERENCES `auberge`.`groupe` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -93,56 +93,56 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `mydb`.`user`
+-- Data for table `auberge`.`user`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
-INSERT INTO `mydb`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (1, 'patoche@intechinfo.fr', 'patoche', 'prof', NULL, 'Patrice', 'Patoche', 'intech');
-INSERT INTO `mydb`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (2 , 'isma@intechinfo.fr', 'isma49', 'eleve', NULL, 'Nimzill', 'ismael', 'intech');
-INSERT INTO `mydb`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (3, 'ben@intechinfo.fr', 'root', 'admin', NULL, 'Rodriguez', 'Benjamin ', 'intech');
-INSERT INTO `mydb`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (4, 'yann@intechinfo.fr', 'root', 'admin', NULL, 'Simachel', 'Yann', 'intech');
-INSERT INTO `mydb`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (5, 'erwan@intehcinfo.fr', 'root', 'admin', NULL, 'Hacques', 'Erwan', 'intech ');
-INSERT INTO `mydb`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (6, 'olive@intechinfo.fr', 'test', 'eleve', NULL, 'Lespagnon', 'olivier', 'intech');
-INSERT INTO `mydb`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (7, 'coco@intechinfo.fr', 'coco', 'prof', NULL, 'Toto', 'coco', 'intech');
-INSERT INTO `mydb`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (8 , 'chris@intechinfo.fr', 'red', 'eleve', NULL, 'Delcourt', 'christopher', 'intech');
-INSERT INTO `mydb`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (9, 'nahel@intechinfo.fr', 'test', 'entreprise', NULL, 'Master', 'Nahel', 'intech');
-INSERT INTO `mydb`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (10, 'ed@intechinfo.fr', 'ed', 'eleve', NULL, 'ed', 'momo', 'intech');
+USE `auberge`;
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (1, 'patoche@intechinfo.fr', 'patoche', 'prof', NULL, 'Patrice', 'Patoche', 'intech');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (2 , 'isma@intechinfo.fr', 'isma49', 'eleve', NULL, 'Nimzill', 'ismael', 'intech');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (3, 'ben@intechinfo.fr', 'root', 'admin', NULL, 'Rodriguez', 'Benjamin ', 'intech');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (4, 'yann@intechinfo.fr', 'root', 'admin', NULL, 'Simachel', 'Yann', 'intech');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (5, 'erwan@intehcinfo.fr', 'root', 'admin', NULL, 'Hacques', 'Erwan', 'intech ');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (6, 'olive@intechinfo.fr', 'test', 'eleve', NULL, 'Lespagnon', 'olivier', 'intech');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (7, 'coco@intechinfo.fr', 'coco', 'prof', NULL, 'Toto', 'coco', 'intech');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (8 , 'chris@intechinfo.fr', 'red', 'eleve', NULL, 'Delcourt', 'christopher', 'intech');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (9, 'nahel@intechinfo.fr', 'test', 'entreprise', NULL, 'Master', 'Nahel', 'intech');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (10, 'ed@intechinfo.fr', 'ed', 'eleve', NULL, 'ed', 'momo', 'intech');
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `mydb`.`projet`
+-- Data for table `auberge`.`projet`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
-INSERT INTO `mydb`.`projet` (`idprojet`, `nom`) VALUES (1, 'un');
-INSERT INTO `mydb`.`projet` (`idprojet`, `nom`) VALUES (2, 'deux');
-INSERT INTO `mydb`.`projet` (`idprojet`, `nom`) VALUES (3, 'trois');
+USE `auberge`;
+INSERT INTO `auberge`.`projet` (`id`, `nom`) VALUES (1, 'un');
+INSERT INTO `auberge`.`projet` (`id`, `nom`) VALUES (2, 'deux');
+INSERT INTO `auberge`.`projet` (`id`, `nom`) VALUES (3, 'trois');
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `mydb`.`groupe`
+-- Data for table `auberge`.`groupe`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
-INSERT INTO `mydb`.`groupe` (`id`, `idvm`, `port`, `statut`, `groupe_id`, `user_has_groupe_id`, `projet_id`, `semestre`) VALUES (1, '1', 500, 'affecté', 1, 1, 1, '1');
-INSERT INTO `mydb`.`groupe` (`id`, `idvm`, `port`, `statut`, `groupe_id`, `user_has_groupe_id`, `projet_id`, `semestre`) VALUES (2, '2', 501, 'affecté', 2, 3, 2, '2');
+USE `auberge`;
+INSERT INTO `auberge`.`groupe` (`id`, `idvm`, `port`, `statut`, `groupe_id`, `user_has_groupe_id`, `projet_id`, `semestre`) VALUES (1, '1', 500, 'affecté', 1, 1, 1, '1');
+INSERT INTO `auberge`.`groupe` (`id`, `idvm`, `port`, `statut`, `groupe_id`, `user_has_groupe_id`, `projet_id`, `semestre`) VALUES (2, '2', 501, 'affecté', 2, 3, 2, '2');
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `mydb`.`user_has_groupe`
+-- Data for table `auberge`.`user_has_groupe`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
-INSERT INTO `mydb`.`user_has_groupe` (`user_id`, `groupe_id`, `id`) VALUES (2, 1, 1);
-INSERT INTO `mydb`.`user_has_groupe` (`user_id`, `groupe_id`, `id`) VALUES (6, 1, 2);
-INSERT INTO `mydb`.`user_has_groupe` (`user_id`, `groupe_id`, `id`) VALUES (8, 2, 3);
-INSERT INTO `mydb`.`user_has_groupe` (`user_id`, `groupe_id`, `id`) VALUES (10, 2, 4);
+USE `auberge`;
+INSERT INTO `auberge`.`user_has_groupe` (`user_id`, `groupe_id`, `id`) VALUES (2, 1, 1);
+INSERT INTO `auberge`.`user_has_groupe` (`user_id`, `groupe_id`, `id`) VALUES (6, 1, 2);
+INSERT INTO `auberge`.`user_has_groupe` (`user_id`, `groupe_id`, `id`) VALUES (8, 2, 3);
+INSERT INTO `auberge`.`user_has_groupe` (`user_id`, `groupe_id`, `id`) VALUES (10, 2, 4);
 
 COMMIT;
 
