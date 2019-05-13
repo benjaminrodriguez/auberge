@@ -11,4 +11,42 @@ function isRegister($pseudo,$password)
     return $req;
 }
 
+function select_projetS($sm)
+{
+  $bdd = bdd();
+      $query = "SELECT groupe.id, projet.nom FROM `groupe` JOIN projet ON groupe.projet_id = projet.id AND groupe.semestre = :sm";
+      $query_params = array(
+        ':sm' => $sm
+          );
+
+      try {
+          $stmt = $bdd->prepare($query);
+          $stmt->execute($query_params);
+      } catch(Exception $e) {
+          die('Erreur : ' . $e->getMessage());
+      }
+      $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $ans;
+}
+
+function getname($sm)
+{
+  $bdd = bdd();
+      $query = "SELECT user.nom FROM user
+      JOIN user_has_groupe ON user_has_groupe.user_id = user.id AND user_has_groupe.groupe_id = :id";
+      $query_params = array(
+        ':id' => $sm
+          );
+
+      try {
+          $stmt = $bdd->prepare($query);
+          $stmt->execute($query_params);
+      } catch(Exception $e) {
+          die('Erreur : ' . $e->getMessage());
+      }
+      $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $ans;
+}
+
+
 ?>

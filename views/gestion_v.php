@@ -1,15 +1,21 @@
 <?php $title='Gestion Projets';  ?>
 <?php ob_start(); ?>
 
+<a href="?page=create_projet"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Creer Projet</button></a>
+<a href="?page=home"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Propositions</button></a>
+<a href="?page=accepted"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Projets acceptés</button></a>
+<br><br>
 <div class="card" style="color: black;">
   <h5 class="card-header">PROJETS S?</h5>
   <div class="card-body">
    
     Voici les projets de ce semestre
-    <div style="float: right;">
+    <!--
+        <div style="float: right;">
                 <a href="?page=create_projet"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Creer Projet</button></a>
     </div>
     <br><br>
+-->
     
     <!-- menu -->
     <div class="container">
