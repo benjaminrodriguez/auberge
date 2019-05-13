@@ -14,10 +14,10 @@
     
     <form action="?page=home" method="POST">
       <div class="input-group">
-        <select class="custom-select" name="semestre">
-          <option selected disabled hidden value="error">semestre</option>
-          <option required value="1">1</option>
-          <option required value="2">2</option>
+        <select required class="custom-select" name="semestre">
+          <option selected disabled hidden value="error">Semestre</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
         </select>
         <div class="input-group-append">
           <button type="submit" class="btn btn-outline-secondary">Accepter</button>
