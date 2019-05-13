@@ -7,7 +7,6 @@ if ($_SESSION['role'] === "prof") {
         <h4><u>Les Propositions</u>
             <div style="float: right;">
                 <a href="?page=create_projet"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Creer Projet</button></a>
-                <a href="?page=gestion"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Gestion Projet</button></a>
                 <a href="?page=accepted"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Projets acceptés</button></a>
             </div>
         </h4>
