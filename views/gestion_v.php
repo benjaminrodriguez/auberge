@@ -6,7 +6,7 @@
 <a href="?page=accepted"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Projets acceptés</button></a>
 <br><br>
 <div class="card" style="color: black;">
-  <h5 class="card-header">PROJETS S?</h5>
+  <h5 class="card-header">PROJETS S<?=  $_SESSION['semestre'] ?></h5>
   <div class="card-body">
    
     Voici les projets de ce semestre
@@ -37,68 +37,59 @@
             </div>
             <div class="col">
               
-              </div>
-              <div class="col">
-              
-              </div>
-        </div>
-
-        <br>
-        <div class="row align-items-start">
-            <div class="col">
-            Auberge
             </div>
             <div class="col">
-            Hergeur
-            </div>
-            <div class="col">
-            Y B E
-            </div>
-            <div class="col">
-            In'tech
-            </div>
-            <div class="col">
-                <a href="#" class="btn btn-success">voir</a> 
-            </div>
-            <div class="col">
-               <a href="#" class="btn btn-primary">modifier</a>
-            </div>
-            <div class="col">
-                <a href="#" class="btn btn-info">publier</a>
-            </div>
-
-
-        </div>
-        <br>
-        <div class="row align-items-start">
-            <div class="col">
-            Auberge
-            </div>
-            <div class="col">
-            Hergeur
-            </div>
-            <div class="col">
-            Y B E
-            </div>
-            <div class="col">
-            In'tech
-            </div>
-            <div class="col">
-                <a href="#" class="btn btn-success">voir</a> 
-            </div>
-            <div class="col">
-               <a href="#" class="btn btn-primary">modifier</a>
-            </div>
-            <div class="col">
-                <a href="#" class="btn btn-info">publier</a>
-            </div>
-
             
+            </div>
         </div>
-    </div>
 
-    
-  </div>
+        <br>
+        <?php
+        if (isset($s1)) {
+            
+            foreach ($s1 as $key => $value) {
+                ?>
+
+                <div class="row align-items-start">
+                <div class="col">
+                <?php echo $s1[$key]['nom']; ?>
+                </div>
+                <div class="col">
+                BESOIN RESME
+                </div>
+                <div class="col">
+                    <?php
+                    $nom = getname($s1[$key]['id']);
+                    foreach ($nom as $key1 => $value1) {
+                        echo $nom[$key1]['nom'].' ';
+                    }
+                    ?>
+                    
+                </div>
+                <div class="col">
+                In'tech
+                </div>
+                <div class="col">
+                    <a href="#" class="btn btn-success">voir</a> 
+                </div>
+                <div class="col">
+                    <a href="#" class="btn btn-primary">modifier</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="btn btn-info">publier</a>
+                </div>
+                </div>
+
+                <?php
+
+            }
+        }
+        ?>
+        
+
+
+    </div>
+    <br>
 </div>
 
 
