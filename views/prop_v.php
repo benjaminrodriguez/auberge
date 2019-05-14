@@ -32,8 +32,11 @@
   </h5>
 
   <div class="card-body">
-    <h5 class="card-title">Proposé par <?php echo $auteur;?> </h5>
-    <p class="card-text"><?php echo $descr;?></p>
+    <h5 class="card-title">Proposé par <?php echo $auteur;?></h5>
+    <br>
+    <h5>Description</h5>
+    <p class="card-text"><?php echo $descr;?>
+  </p>
     
   </div>
 </div>

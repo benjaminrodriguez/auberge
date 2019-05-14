@@ -62,7 +62,11 @@
         else if ($_GET['page'] == 'accepted') 
         {
             require_once('controllers/accepted_c.php');
-        }             
+        }
+        else if ($_GET['page'] == 'v') 
+        {
+            require_once('controllers/voirprojet_c.php');
+        }                
         else
         {
             require_once('views/404.php');

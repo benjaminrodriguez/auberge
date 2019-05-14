@@ -70,7 +70,7 @@
                 In'tech
                 </div>
                 <div class="col">
-                    <a href="#" class="btn btn-success">voir</a> 
+                    <a href="?page=v&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-success">voir</a> 
                 </div>
                 <div class="col">
                     <a href="#" class="btn btn-primary">modifier</a>
