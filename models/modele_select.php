@@ -48,7 +48,6 @@ function getname($sm)
       return $ans;
 }
 
-<<<<<<< Updated upstream
 function voirprojet($sm)
 {
   $bdd = bdd();
@@ -71,19 +70,14 @@ function voirprojet($sm)
       return $ans;
 }
 
-
-
-=======
-function liste_elev($liste){
+function liste_elev(){
     $bdd =bdd();
-    $query = "SELECT nom prenom from user like `statut` = `eleve` WHERE id =:id";
+    $query = "SELECT nom,prenom,id from user WHERE `statut` = 'eleve'";
     $req->execute(array(
-        ":id" => $liste,
       ));
       $result = $req->fetch(PDO::FETCH_ASSOC);
       return $result;
 }
 
->>>>>>> Stashed changes
 
 ?>
