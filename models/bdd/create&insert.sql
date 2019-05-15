@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `auberge`.`projet` (
   `nom` VARCHAR(45) NULL,
   `resume` VARCHAR(255) NULL,
   `entreprise` VARCHAR(50) NULL,
+  `datep` DATETIME NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
