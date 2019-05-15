@@ -51,13 +51,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `auberge`.`groupe` (
   `id` INT NOT NULL,
-  `idvm` VARCHAR(45) NOT NULL,
-  `port` INT NOT NULL,
+  `idvm` VARCHAR(45) NULL,
+  `port` INT NULL,
   `statut` ENUM('dispo', 'qualifié', 'affecté') NOT NULL,
   `groupe_id` INT NOT NULL,
   `user_has_groupe_id` INT NOT NULL,
   `projet_id` INT NOT NULL,
-  `semestre` VARCHAR(45) NOT NULL,
+  `semestre` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_groupe_projet1_idx` (`projet_id` ASC) ,
   CONSTRAINT `fk_groupe_projet1`

@@ -13,9 +13,56 @@ if ($_SESSION['role'] === "prof") {
         <br>
 
         
-    
+    <?php 
+    if (!isset($projet[0]['nomp'])) {
+        ?>
+        Il n'y a pas de projet a qualifier.
+        <?php
+    }
+    else {
+        ?>
+
         <div class="container">
             <div class="row">
+            <?php
+            $i = 0;
+            foreach ($projet as $key => $value) {
+                if ($i%2 == 0 && $i !== 0) {
+                    ?>
+                    </div>
+                    <br>
+                    <div class="row">
+                    <?php
+                } else if ($i === 0) {
+                } else {
+                
+                    ?>
+                    &nbsp
+                    <?php
+                }
+                ?>
+                <div class="col-sm">
+                    <div class="card">
+                        <h5 class="card-header"><?php echo $projet[$key]['nomp'];?></h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Entreprise</h5>
+                            <p class="card-text">Résumé proposition</p>
+                            <a href="?page=prop&projet=<?php echo $projet[$key]['idp']; ?>" class="btn btn-primary">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <?php
+                $i++;
+                if (!isset($projet[$key+1]) && $i%2 !== 0 ) {
+                    ?>
+                    <div class="col-sm">
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+            <!--
                 <div class="col-sm">
                     <div class="card">
                         <h5 class="card-header">Titre proposition</h5>
@@ -36,11 +83,16 @@ if ($_SESSION['role'] === "prof") {
                             <a href="?page=prop" class="btn btn-primary">Voir plus</a>
                         </div>
                     </div>
-                </div>
+                </div>-->
+                
             </div>
+            
         </div>
 
     </div>
+    <?php
+    }
+    ?>
     <?php
 } else if($_SESSION['role'] === "eleve") {
     ?>

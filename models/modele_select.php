@@ -79,5 +79,38 @@ function liste_elev(){
       return $result;
 }
 
+function voirdispo(){
+  $bdd = bdd();
+  $query = "SELECT projet.nom AS nomp, projet.id AS idp FROM `groupe` 
+  JOIN projet ON projet.id = groupe.projet_id AND statut LIKE 'dispo'";
+  $query_params = array();
+
+  try {
+      $stmt = $bdd->prepare($query);
+      $stmt->execute($query_params);
+  } catch(Exception $e) {
+      die('Erreur : ' . $e->getMessage());
+  }
+  $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  return $ans;
+}
+
+function voirdispoid($sm){
+  $bdd = bdd();
+  $query = "SELECT projet.nom AS nomp FROM `groupe` 
+  JOIN projet ON projet.id = groupe.projet_id AND statut LIKE 'dispo' AND projet.id = :id";
+  $query_params = array(
+    ':id' => $sm
+  );
+
+  try {
+      $stmt = $bdd->prepare($query);
+      $stmt->execute($query_params);
+  } catch(Exception $e) {
+      die('Erreur : ' . $e->getMessage());
+  }
+  $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  return $ans;
+}
 
 ?>

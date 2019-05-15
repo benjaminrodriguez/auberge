@@ -7,11 +7,12 @@
         exit;
     } 
 
-    if (isset($_SESSION['status']) && $_SESSION['status'] === "prof") {
-        $notifs = checknotif_SELECT();
+    if (isset($_SESSION['role']) && $_SESSION['role'] === "prof") {
+        //$notifs = checknotif_SELECT();
 
 
         // RECUPERER LES PROPOSITIONS DE PROJETS
+        $projet = voirdispo();
     }
     else {
         // RECUPERER LES SUJET DES LELEVE

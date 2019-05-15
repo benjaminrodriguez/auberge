@@ -2,7 +2,7 @@
 
 <div class="card" style="color: black">
   <h5 class="card-header" style ="line-height: 10px;">
-    <div style="margin-top: 10px"><?php echo $titre;?></div>
+    <div style="margin-top: 10px"><?php echo $projet[0]['nomp'];?></div>
   
   <div class="float-right">
 
@@ -12,15 +12,15 @@
     <a href="#" class="btn btn-danger">Refuser</a>
     <br> <br>
     
-    <form action="?page=home" method="POST">
+    <form action="?page=prop&projet=<?php echo $_GET['projet'] ?>" method="POST">
       <div class="input-group">
         <select required class="custom-select" name="semestre">
           <option selected disabled hidden value="error">Semestre</option>
           <option value="1">1</option>
           <option value="2">2</option>
-          <option value="2">3</option>
-          <option value="2">4</option>
-          <option value="2">5</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
         </select>
         <div class="input-group-append">
           <button type="submit" class="btn btn-outline-secondary">Accepter</button>
