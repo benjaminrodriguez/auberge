@@ -61,7 +61,7 @@ ob_start(); ?>
                     <a href="?page=v&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-success">voir</a> 
                 </div>
                 <div class="col">
-                    <a href="#" class="btn btn-primary">modifier</a>
+                    <a href="?page=modifyp&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-primary">modifier</a>
                 </div>
                 <div class="col">
                     <a href="#" class="btn btn-info">publier</a>
