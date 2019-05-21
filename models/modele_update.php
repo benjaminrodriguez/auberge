@@ -17,4 +17,16 @@ function qualififié_projet($projetId){
         ":id" => $projetId,
     ));
 }    
+
+function modifier_projet($projetId){
+    $db = bdd();
+    $req = $db->prepare("UPDATE `projet` SET `nom`= `nom` = :nom , `description` = :description , `semestre` = :semestre WHERE `projet`. `id`= :id" );
+    $req->execute(array(
+        ":id" => $_GET['projet'],
+        ":nom" => $_POST['nameProject'],
+        ":description" => $_POST['describeProject'],
+        ":semestre" => $_POST['semestre']
+
+    ));
+}
 ?>
