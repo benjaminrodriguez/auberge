@@ -4,10 +4,10 @@
   A propos du Projet :
     <div class="form-example">
         <label for="nameProject">Nom du projet : </label>
-        <input type="text" name="nameProject" id="nameProject" value="<?php echo $nom; ?>" required>
+        <input type="text" name="nameProject" id="nameProject" value="<?php echo 000; ?>" required>
     </div>
     <textarea id="describeProject" name="describeProject"
-    rows="5" cols="33" value="<?php echo $descript; ?>">Description du Projet</textarea>
+    rows="5" cols="33" ><?php echo "Defsdnefzknoefzknefzknoefzknl"; ?></textarea>
         <select required class="custom-select" name="semestre">
           <option selected disabled hidden value="error">Semestre</option>
           <option value="1">1</option>

@@ -66,7 +66,11 @@
         else if ($_GET['page'] == 'v') 
         {
             require_once('controllers/voirprojet_c.php');
-        }                
+        }
+        else if ($_GET['page'] == 'modifyp') 
+        {
+            require_once('controllers/modify_projet_c.php');
+        } 
         else
         {
             require_once('views/404.php');
