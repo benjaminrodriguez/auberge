@@ -8,11 +8,7 @@
 # ------------------------------------------------
 
 # ------------------------------------------------
-# INSTALLATION NGINX
+# INSTALLATION NET TOOLS
 # ------------------------------------------------
 
-`sudo apt install nginx`
-
-`sudo systemctl enable nginx`
-
-`sudo systemctl restart nginx`
+`sudo apt install net-tools`
