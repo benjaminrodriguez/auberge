@@ -113,4 +113,22 @@ function voirdispoid($sm){
   return $ans;
 }
 
+function select_acceptedprojetS($sm)
+{
+  $bdd = bdd();
+      $query = "SELECT groupe.id, projet.nom, projet.id AS proj FROM `groupe` JOIN projet ON groupe.projet_id = projet.id AND groupe.semestre = :sm AND groupe.statut LIKE 'qualifié'";
+      $query_params = array(
+        ':sm' => $sm
+          );
+
+      try {
+          $stmt = $bdd->prepare($query);
+          $stmt->execute($query_params);
+      } catch(Exception $e) {
+          die('Erreur : ' . $e->getMessage());
+      }
+      $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $ans;
+}
+
 ?>
