@@ -64,7 +64,13 @@ ob_start(); ?>
                     <a href="?page=modifyp&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-primary">modifier</a>
                 </div>
                 <div class="col">
-                    <a href="#" class="btn btn-info">publier</a>
+                    <?php 
+                    if (isset($_SESSION['role']) && $_SESSION['role'] === "prof") {
+                        ?>
+                        <a href="#" class="btn btn-info">publier</a>
+                        <?php
+                    }
+                    ?>
                 </div>
                 </div>
 
@@ -163,7 +169,13 @@ ob_start(); ?>
                     <a href="#" class="btn btn-primary">modifier</a>
                 </div>
                 <div class="col">
-                    <a href="#" class="btn btn-info">publier</a>
+                <?php 
+                    if (isset($_SESSION['role']) && $_SESSION['role'] === "prof") {
+                        ?>
+                        <a href="#" class="btn btn-info">publier</a>
+                        <?php
+                    }
+                    ?>
                 </div>
                 </div>
 
