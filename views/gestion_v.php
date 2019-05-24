@@ -55,7 +55,7 @@
                 <?php echo $s1[$key]['nom']; ?>
                 </div>
                 <div class="col">
-                BESOIN RESME
+                BESOIN RESUME
                 </div>
                 <div class="col">
                     <?php
@@ -67,16 +67,16 @@
                     
                 </div>
                 <div class="col">
-                In'tech
+                IN'TECH
                 </div>
                 <div class="col">
-                    <a href="?page=v&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-success">voir</a> 
+                    <a href="?page=v&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-success">Voir</a> 
                 </div>
                 <div class="col">
-                    <a href="?page=modifyp&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-primary">modifier</a>
+                    <a href="?page=modifyp&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-primary">Modifier</a>
                 </div>
                 <div class="col">
-                    <a href="#" class="btn btn-info">publier</a>
+                    <a href="?page=publier&projet=" class="btn btn-info">Publier</a>
                 </div>
                 </div>
 
