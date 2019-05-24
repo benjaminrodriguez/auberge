@@ -29,4 +29,27 @@ function modifier_projet($projetId){
 
     ));
 }
+
+function password_UPDATE( $value_attribut, $id)
+{
+    $bdd = bdd();
+    $req = $bdd->prepare(' UPDATE user
+                        SET password = ? 
+                        WHERE id = ? 
+                        LIMIT 1
+                        ');
+    $req->execute(array($value_attribut, $id));
+}
+
+function picture_UPDATE( $value_attribut, $id)
+{
+    $bdd = bdd();
+    $req = $bdd->prepare(' UPDATE user
+                        SET avatar = ? 
+                        WHERE id = ? 
+                        LIMIT 1
+                        ');
+    $req->execute(array($value_attribut, $id));
+}
+ 
 ?>

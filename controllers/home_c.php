@@ -1,13 +1,13 @@
 <?php
 
     //SI L'UTILISATEUR N'EST PAS CONNECTE, IL EST REDIRIGER VERS LA PAGE DE CONNEXION
-    if (isset($_SESSION['username']))
+    if (!isset($_SESSION['id']))
     {
         header('Location: index.php?page=connection');
         exit;
     } 
 
-    if (isset($_SESSION['role']) && $_SESSION['role'] === "prof") {
+    if (isset($_SESSION['statut']) && $_SESSION['statut'] === "prof") {
         //$notifs = checknotif_SELECT();
 
 

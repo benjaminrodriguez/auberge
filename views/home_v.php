@@ -1,6 +1,6 @@
 <?php $title='Accueil';  ?>
 <?php ob_start(); 
-if ($_SESSION['role'] === "prof") {
+if ($_SESSION['statut'] === "prof") {
     ?>
     <div class="well">
 
@@ -94,7 +94,7 @@ if ($_SESSION['role'] === "prof") {
     }
     ?>
     <?php
-} else if($_SESSION['role'] === "eleve") {
+} else if($_SESSION['statut'] === "eleve") {
     ?>
         <div class="well">
 

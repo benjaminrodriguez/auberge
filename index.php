@@ -1,7 +1,10 @@
 <?php
     session_start();
 
-    $_SESSION['role'] = "eleve";
+    //var_dump($_SESSION);
+   
+
+    //$_SESSION['role'] = "eleve";
     //$_SESSION['role'] = "prof";
 
     // REQUIRE LES MODELES DE BDD
@@ -13,9 +16,15 @@
 
     if ($_GET['page'] == 'connection')
     {
-        if(isset($_SESSION['username']))  header('Location: index.php?page=home');
+        if(isset($_SESSION['mail'])){
+            header('Location: index.php?page=home');
+
+        }  
         //else require_once('controllers/connection_Controllers.php');
-        else require_once('controllers/connection_c.php');
+        else 
+        {
+            require_once('controllers/connection_c.php');
+        }
 
     }
     else if (isset($_GET['page']) && !empty($_GET['page']) && isset($_SESSION['id'])) 
@@ -37,7 +46,7 @@
 
         else if ($_GET['page'] == 'profile')
         {
-            require_once('controllers/profile_Controllers.php');
+            require_once('controllers/profile_c.php');
         }    
         // NOUVEAU PROJET
     
@@ -69,6 +78,10 @@
         {
             require_once('controllers/modify_projet_c.php');
         } 
+        else if ($_GET['page'] == 'projets') 
+        {
+            require_once('controllers/project_c.php');
+        }
         else
         {
             require_once('views/404.php');

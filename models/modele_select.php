@@ -131,4 +131,38 @@ function select_acceptedprojetS($sm)
       return $ans;
 }
 
+function select_connect($mail, $psw)
+{
+  $bdd = bdd();
+      $query = "SELECT `id`,`statut`, `avatar`, `mail`,`nom`, `prenom`, `nom_ecole` FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw";
+      $query_params = array(
+        ':mail' => $mail,
+        ':psw' => $psw
+          );
+
+      try {
+          $stmt = $bdd->prepare($query);
+          $stmt->execute($query_params);
+      } catch(Exception $e) {
+          die('Erreur : ' . $e->getMessage());
+      }
+      $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $ans;
+}
+
+function password_SELECT($id)
+    {
+        $bdd = bdd();
+        $req = $bdd->prepare(' SELECT password
+                                FROM user
+                                WHERE id = ?
+                                LIMIT 1;
+                            ');
+        $req->execute(array($id));
+        $donnees = $req->fetch();
+        return $donnees;
+    }
+
+
+
 ?>
