@@ -82,6 +82,10 @@
         {
             require_once('controllers/project_c.php');
         }
+        else if ($_GET['page'] == 'premiereConnection') 
+        {
+            require_once('controllers/premiereConnexion_c.php');
+        }
         else
         {
             require_once('views/404.php');

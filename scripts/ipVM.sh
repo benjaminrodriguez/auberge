@@ -2,7 +2,7 @@
 
 # ------------------------------------------------
 # Benjamin Rodriguez
-# Contact : benjamin-rodriguez@outlook.fr
+# Contact : rodriguez@intechinfo.fr
 # Date : 22/05/2019
 # Version : 1.0
 # ------------------------------------------------
