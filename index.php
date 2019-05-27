@@ -82,10 +82,7 @@
         {
             require_once('controllers/project_c.php');
         }
-        else if ($_GET['page'] == 'premiereConnection') 
-        {
-            require_once('controllers/premiereConnexion_c.php');
-        }
+        
         else
         {
             require_once('views/404.php');
@@ -97,6 +94,10 @@
         if ($_GET['page'] == 'projets') 
         {
             require_once('controllers/project_c.php');
+        }
+        else if ($_GET['page'] == 'firstconnect') 
+        {
+            require_once('controllers/firstconnect_c.php');
         }
         else 
         {
