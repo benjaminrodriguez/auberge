@@ -1,13 +1,43 @@
 <?php 
-
-function creation_projet_INSERT ($nomProjet, $description, $eleves, $status, $email)
+    function creation_projet_INSERT($name, $desc, $entre, $sem)
     {
-        $bdd = bdd();
-        // CREATION PROJET
-        $create_projet = $bdd->prepare(
-        'INSERT INTO projet (nom, idvm, port, dispo, groupe_id, projet_id, semestre) 
-        VALUES (?, ?, ?, ?, ?, ?, ?);
-        ');
-        $create_projet->execute(array($nomProjet, $description, $eleves, $status, $email));
+      $bdd = bdd();
+          $query = "INSERT INTO `projet`(`id`, `nom`, `resume`, `entreprise`, `datep`, `statut`, `semestre`) VALUES (NULL, :name , :desc, :entre, CURRENT_DATE, 'qualifié' , :sem)";
+          $query_params = array(
+            ':name' => $name,
+            ':desc' => $desc,
+            ':sem' => $sem,
+            ':entre' => $entre
+              );
+    
+          try {
+              $stmt = $bdd->prepare($query);
+              $stmt->execute($query_params);
+          } catch(Exception $e) {
+              die('Erreur : ' . $e->getMessage());
+          }
     }
+
+    function newuser_INSERT($mail, $psw, $stat, $avatar, $nom, $prenom, $ecole)
+    {
+      $bdd = bdd();
+          $query = "INSERT INTO `user`(`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (NULL,:mail,:psw,:stat,:avatar,:nom,:prenom,:ecole)";
+          $query_params = array(
+            ':mail' => $mail,
+            ':psw' => $psw,
+            ':stat' => $stat,
+            ':avatar' => $avatar,
+            ':nom' => $nom,
+            ':prenom' => $prenom,
+            ':ecole' => $ecole
+              );
+    
+          try {
+              $stmt = $bdd->prepare($query);
+              $stmt->execute($query_params);
+          } catch(Exception $e) {
+              die('Erreur : ' . $e->getMessage());
+          }
+    }
+    
 ?>

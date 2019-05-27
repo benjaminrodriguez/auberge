@@ -21,7 +21,7 @@ USE `auberge` ;
 -- Table `auberge`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `auberge`.`user` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `mail` VARCHAR(100) NULL,
   `password` VARCHAR(100) NULL,
   `statut` ENUM('prof', 'eleve', 'admin', 'entreprise') NULL,
@@ -37,11 +37,13 @@ ENGINE = InnoDB;
 -- Table `auberge`.`projet`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `auberge`.`projet` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(45) NULL,
   `resume` VARCHAR(255) NULL,
   `entreprise` VARCHAR(50) NULL,
   `datep` DATETIME NULL,
+  `statut` ENUM('dispo', 'qualifié', 'affecté') NOT NULL,
+  `semestre` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -50,14 +52,12 @@ ENGINE = InnoDB;
 -- Table `auberge`.`groupe`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `auberge`.`groupe` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `idvm` VARCHAR(45) NULL,
   `port` INT NULL,
-  `statut` ENUM('dispo', 'qualifié', 'affecté') NOT NULL,
   `groupe_id` INT NOT NULL,
   `user_has_groupe_id` INT NOT NULL,
   `projet_id` INT NOT NULL,
-  `semestre` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_groupe_projet1_idx` (`projet_id` ASC) ,
   CONSTRAINT `fk_groupe_projet1`
@@ -72,9 +72,9 @@ ENGINE = InnoDB;
 -- Table `auberge`.`user_has_groupe`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `auberge`.`user_has_groupe` (
-  `user_id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL, 
   `groupe_id` INT NOT NULL,
-  `id` INT NOT NULL,
   INDEX `fk_user_has_projet_projet1_idx` (`groupe_id` ASC) ,
   INDEX `fk_user_has_projet_user_idx` (`user_id` ASC) ,
   PRIMARY KEY (`id`),
@@ -100,7 +100,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `auberge`;
-INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (1, 'patoche@intechinfo.fr', 'patoche', 'prof', NULL, 'Patrice', 'Patoche', 'intech');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (1, 'a', 'a', 'prof', NULL, 'Patrice', 'Patoche', 'intech');
 INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (2 , 'isma@intechinfo.fr', 'isma49', 'eleve', NULL, 'Nimzill', 'ismael', 'intech');
 INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (3, 'ben@intechinfo.fr', 'root', 'admin', NULL, 'Rodriguez', 'Benjamin ', 'intech');
 INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (4, 'yann@intechinfo.fr', 'root', 'admin', NULL, 'Simachel', 'Yann', 'intech');
@@ -119,9 +119,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `auberge`;
-INSERT INTO `auberge`.`projet` (`id`, `nom`) VALUES (1, 'un');
-INSERT INTO `auberge`.`projet` (`id`, `nom`) VALUES (2, 'deux');
-INSERT INTO `auberge`.`projet` (`id`, `nom`) VALUES (3, 'trois');
+INSERT INTO `auberge`.`projet` (`id`, `nom`, `statut`) VALUES (1, 'un', 'dispo');
+INSERT INTO `auberge`.`projet` (`id`, `nom`, `statut`) VALUES (2, 'deux', 'dispo');
+INSERT INTO `auberge`.`projet` (`id`, `nom`, `statut`) VALUES (3, 'trois', 'dispo');
 
 COMMIT;
 
@@ -131,8 +131,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `auberge`;
-INSERT INTO `auberge`.`groupe` (`id`, `idvm`, `port`, `statut`, `groupe_id`, `user_has_groupe_id`, `projet_id`, `semestre`) VALUES (1, '1', 500, 'affecté', 1, 1, 1, '1');
-INSERT INTO `auberge`.`groupe` (`id`, `idvm`, `port`, `statut`, `groupe_id`, `user_has_groupe_id`, `projet_id`, `semestre`) VALUES (2, '2', 501, 'affecté', 2, 3, 2, '2');
+INSERT INTO `auberge`.`groupe` (`id`, `idvm`, `port`, `groupe_id`, `user_has_groupe_id`, `projet_id`) VALUES (1, '1', 500, 1, 1, 1);
+INSERT INTO `auberge`.`groupe` (`id`, `idvm`, `port`, `groupe_id`, `user_has_groupe_id`, `projet_id`) VALUES (2, '2', 501, 2, 3, 2);
 
 COMMIT;
 
