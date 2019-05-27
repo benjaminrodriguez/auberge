@@ -5,11 +5,12 @@ function rand_string( $length ) {
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$&=+-_:?!)(";
     return substr(str_shuffle($chars),0,$length);
 }
-$passRand = rand_string(10);
+$_SESSION['passRand'] = rand_string(10);
 
 if (isset($_POST['SignIn'])) {
   $avatar = "https://pbs.twimg.com/profile_images/464501040197287936/gpy18PJj_400x400.jpeg";
-  newuser_INSERT($_POST['email'], $passRand, "eleve", $avatar, $_POST['nom'], $_POST['prenom'], "in'tech");
+  newuser_INSERT($_POST['email'], $_SESSION['passRand'], "eleve", $avatar, $_POST['nom'], $_POST['prenom'], "in'tech");
+  header('Location: index.php?page=confirmationFirstConnexion');
 }
 
     require(dirname(__FILE__).'/../views/premiereConnexion_v.php');
