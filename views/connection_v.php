@@ -15,7 +15,7 @@
     </div>
 <div>
        
-<br><center> <a href ="./controllers/premiereConnexion_c.php"  button class=" btn btn-success" style="font-size:1.2em; text-align: center">Première connexion</button></center></a>
+<br><center> <a href =".?page=firstconnect"  button class=" btn btn-success" style="font-size:1.2em; text-align: center">Première connexion</button></center></a>
 </div>
 </div>
 
