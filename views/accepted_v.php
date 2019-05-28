@@ -36,13 +36,13 @@
                 <?php echo $s1[$key]['nom']; ?>
                 </div>
                 <div class="col">
-                BESOIN RESME
+                <?php echo $s1[$key]['resume']; ?>
                 </div>
                 <div class="col">
-                In'tech
+                <?php echo $s1[$key]['entreprise']; ?>
                 </div>
                 <div class="col">
-                    <a href="?page=v&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-success">voir</a> 
+                    <a href="?page=v&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-success">voir</a> 
                 
                     <a href="#" class="btn btn-info">publier</a>
                 </div>
@@ -85,16 +85,16 @@
 
                 <div class="row align-items-start">
                 <div class="col">
-                <?php echo $s1[$key]['nom']; ?>
+                <?php echo $s2[$key]['nom']; ?>
                 </div>
                 <div class="col">
-                BESOIN RESME
+                <?php echo $s2[$key]['resume']; ?>
                 </div>
                 <div class="col">
-                In'tech
+                <?php echo $s2[$key]['entreprise']; ?>
                 </div>
                 <div class="col">
-                    <a href="?page=v&projet=<?php echo $s2[$key]['proj'];?>" class="btn btn-success">voir</a> 
+                    <a href="?page=v&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-success">voir</a> 
                     <a href="#" class="btn btn-info">publier</a>
                 </div>
                 <br><br>

@@ -7,19 +7,19 @@ function rand_string( $length ) {
 }
 $_SESSION['passRand'] = rand_string(10);
 
-if (isset($_POST['SignIn'])) {
+if (isset($_POST['nom']) && isset($_POST['email'])) {
   $avatar = "https://pbs.twimg.com/profile_images/464501040197287936/gpy18PJj_400x400.jpeg";
   newuser_INSERT($_POST['email'], $_SESSION['passRand'], "eleve", $avatar, $_POST['nom'], $_POST['prenom'], "in'tech");
   header('Location: index.php?page=confirmationFirstConnexion');
 }
 
-    require(dirname(__FILE__).'/../views/premiereConnexion_v.php');
+require(dirname(__FILE__).'/../views/premiereConnexion_v.php');
 
     
 // ----------------------------
 // ENVOI MAIL MDP
 // ----------------------------
-
+/*
 $mail = 'hacques@intechinfo.fr'; // Déclaration de l'adresse de destination.
 if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui rencontrent des bogues.
 {
@@ -70,4 +70,5 @@ $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
 mail($mail,$sujet,$message,$header);
 echo "mail ok";
 //==========
+*/
 ?>

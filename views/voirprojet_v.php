@@ -2,8 +2,8 @@
 
 <div class="card" style="color: black">
   <h5 class="card-header" style ="line-height: 10px;">
-    <div style="margin-top: 10px"><?php echo $titre;?>
-    <div style="float: right;"> Semestre <?php echo $auteur;?> </div>
+    <div style="margin-top: 10px"><?php echo $projet[0]['nom'];?>
+    <div style="float: right;"> Semestre <?php echo $projet[0]['semestre'];?> </div>
   </div>
   
   <div class="float-right">
@@ -18,7 +18,7 @@
   </h5>
 
   <div class="card-body">
-    <h5 class="card-title">Proposé par <?php echo $auteur;?></h5>
+    <h5 class="card-title">Proposé par <?php echo $projet[0]['entreprise'];?></h5>
 
     <h5>Description</h5>
     <p class="card-text">
@@ -27,7 +27,7 @@
         foreach ($projet as $key => $value) {
           echo $projet[$key]['name']." ";
         } 
-        echo $descr;?>
+        echo $projet[0]['resume'];;?>
     </p> 
   </div>
 </div>

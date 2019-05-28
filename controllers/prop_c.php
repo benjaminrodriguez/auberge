@@ -10,8 +10,7 @@
         header('Location: index.php?page=home');
         exit();
         
-    }
-    if (isset($_GET['projet'])) {
+    } else if (isset($_GET['projet'])) {
         //RECUP LES INFOS DANS LA BDD SUR LA PROPOSITION 
         $projet = voirdispoid($_GET['projet']);
     }

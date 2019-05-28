@@ -6,11 +6,14 @@ $titre= "TEST TITRE";
     if (isset($_GET['projet'])) {
         //RECUP LES INFOS DANS LA BDD SUR LA PROPOSITION
         //echo $_GET['projet'];
-        $projet = voirprojet($_GET['projet']);
-    
-        $titre = $projet['0']['nom'];
-        $auteur = $projet['0']['semestre'];
+        $projet = voirprojet1($_GET['projet']);
 
+        var_dump($projet);
+        if($projet[0]['statut'] == "qualifié") {
+
+            $auteurs = voirauteurprojet($_GET['projet']);
+        }
+    
 
     }
 
