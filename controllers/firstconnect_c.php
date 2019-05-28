@@ -2,10 +2,10 @@
 
 function rand_string( $length ) {
 
-    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$&=+-_:?!)(";
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$&=+-:?!)(";
     return substr(str_shuffle($chars),0,$length);
 }
-$_SESSION['passRand'] = rand_string(10);
+$_SESSION['passRand'] = rand_string(15);
 
 if (isset($_POST['nom']) && isset($_POST['email'])) {
   $avatar = "https://pbs.twimg.com/profile_images/464501040197287936/gpy18PJj_400x400.jpeg";
@@ -19,7 +19,7 @@ require(dirname(__FILE__).'/../views/premiereConnexion_v.php');
 // ----------------------------
 // ENVOI MAIL MDP
 // ----------------------------
-/*
+
 $mail = 'hacques@intechinfo.fr'; // Déclaration de l'adresse de destination.
 if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui rencontrent des bogues.
 {
@@ -39,7 +39,7 @@ $boundary = "-----=".md5(rand());
 //==========
  
 //=====Définition du sujet.
-$sujet = "Hey mon ami !";
+$sujet = "Hey mon ami ! " .$_SESSION['passRand'];
 //=========
  
 //=====Création du header de l'e-mail.
@@ -70,5 +70,5 @@ $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
 mail($mail,$sujet,$message,$header);
 echo "mail ok";
 //==========
-*/
+
 ?>

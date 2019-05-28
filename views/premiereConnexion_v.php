@@ -7,7 +7,7 @@
     <form enctype="multipart/form-data" action="index.php?page=firstconnect" id="monFormulaire" method="POST">   
         <input type="text"  placeholder="Nom" name="nom" required></br>
         <input type="text"  placeholder="Prénom" name="prenom" required></br>
-        <label for="email"></label> <input type="text" name="email" id="mail" class="champ" placeholder="E-mail"/>
+        <label for="email"></label> <input type="text" name="email" id="mail" class="champ" placeholder="Adresse email INTECH"/>
         <br>
        </center>
     
