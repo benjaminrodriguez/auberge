@@ -99,6 +99,10 @@
         {
             require_once('controllers/firstconnect_c.php');
         }
+        else if ($_GET['page'] == 'confirmationFirstConnexion') 
+        {
+            require_once('controllers/confiramtionFristConnexion_c.php');
+        }
         else 
         {
             header('Location: index.php?page=connection');
