@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `auberge`.`user` (
   `nom` VARCHAR(45) NULL,
   `prenom` VARCHAR(45) NULL,
   `nom_ecole` VARCHAR(45) NULL,
+  `actif` ENUM('up', 'down', 'ban') NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -100,16 +101,16 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `auberge`;
-INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (1, 'a', 'a', 'prof', NULL, 'Patrice', 'Patoche', 'intech');
-INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (2 , 'isma@intechinfo.fr', 'isma49', 'eleve', NULL, 'Nimzill', 'ismael', 'intech');
-INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (3, 'ben@intechinfo.fr', 'root', 'admin', NULL, 'Rodriguez', 'Benjamin ', 'intech');
-INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (4, 'yann@intechinfo.fr', 'root', 'admin', NULL, 'Simachel', 'Yann', 'intech');
-INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (5, 'erwan@intehcinfo.fr', 'root', 'admin', NULL, 'Hacques', 'Erwan', 'intech ');
-INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (6, 'olive@intechinfo.fr', 'test', 'eleve', NULL, 'Lespagnon', 'olivier', 'intech');
-INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (7, 'coco@intechinfo.fr', 'coco', 'prof', NULL, 'Toto', 'coco', 'intech');
-INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (8 , 'chris@intechinfo.fr', 'red', 'eleve', NULL, 'Delcourt', 'christopher', 'intech');
-INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (9, 'nahel@intechinfo.fr', 'test', 'entreprise', NULL, 'Master', 'Nahel', 'intech');
-INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`) VALUES (10, 'ed@intechinfo.fr', 'ed', 'eleve', NULL, 'ed', 'momo', 'intech');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`, `actif`) VALUES (1, 'a', NULL , 'prof', NULL, 'Patrice', 'Patoche', 'intech', 'down');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`, `actif`) VALUES (2 , 'isma@intechinfo.fr', 'isma49', 'eleve', NULL, 'Nimzill', 'ismael', 'intech', 'up');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`, `actif`) VALUES (3, 'ben@intechinfo.fr', 'root', 'admin', NULL, 'Rodriguez', 'Benjamin ', 'intech', 'up');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`, `actif`) VALUES (4, 'yann@intechinfo.fr', 'root', 'admin', NULL, 'Simachel', 'Yann', 'intech', 'up');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`, `actif`) VALUES (5, 'erwan@intehcinfo.fr', 'root', 'admin', NULL, 'Hacques', 'Erwan', 'intech ', 'up');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`, `actif`) VALUES (6, 'olive@intechinfo.fr', 'test', 'eleve', NULL, 'Lespagnon', 'olivier', 'intech', 'up');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`, `actif`) VALUES (7, 'coco@intechinfo.fr', 'coco', 'prof', NULL, 'Toto', 'coco', 'intech', 'up');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`, `actif`) VALUES (8 , 'chris@intechinfo.fr', 'red', 'eleve', NULL, 'Delcourt', 'christopher', 'intech', 'up');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`, `actif`) VALUES (9, 'nahel@intechinfo.fr', 'test', 'entreprise', NULL, 'Master', 'Nahel', 'intech', 'up');
+INSERT INTO `auberge`.`user` (`id`, `mail`, `password`, `statut`, `avatar`, `nom`, `prenom`, `nom_ecole`, `actif`) VALUES (10, 'ed@intechinfo.fr', 'ed', 'eleve', NULL, 'ed', 'momo', 'intech', 'up');
 
 COMMIT;
 
