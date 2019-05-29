@@ -1,0 +1,14 @@
+---
+- name: Install de serveur Web
+  hosts: web
+  remote_user: root
+
+  tasks:
+    - name: Installation de Git
+    - apt: name=git update_cache=yes
+
+    - name: Installation de Vim
+    - apt: name=vim
+
+
+...
