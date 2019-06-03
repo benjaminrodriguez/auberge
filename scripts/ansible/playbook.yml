@@ -1,0 +1,16 @@
+---
+- name: Install de serveur Web
+  hosts: web
+  remote_user: root
+
+  tasks:
+    - name: Installation de Git
+      apt: name={{ item }} update_cache=yes state=latest
+      with_items:
+        - vim
+        - git
+        - curl
+        - ssh
+        - net-tools
+
+...
