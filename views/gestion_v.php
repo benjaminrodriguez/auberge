@@ -1,4 +1,6 @@
-<?php $title='Gestion Projets';  ?>
+<?php 
+// the breaker
+$title='Gestion Projets';  ?>
 <?php ob_start(); ?>
 
 <a href="?page=create_projet"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Creer Projet</button></a>
@@ -55,7 +57,7 @@
                 <?php echo $s1[$key]['nom']; ?>
                 </div>
                 <div class="col">
-                BESOIN RESUME
+                <?php echo $s1[$key]['resume']; ?>
                 </div>
                 <div class="col">
                     <?php
@@ -67,13 +69,13 @@
                     
                 </div>
                 <div class="col">
-                IN'TECH
+                <?php echo $s1[$key]['entreprise']; ?>
                 </div>
                 <div class="col">
-                    <a href="?page=v&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-success">Voir</a> 
+                    <a href="?page=v&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-success">Voir</a> 
                 </div>
                 <div class="col">
-                    <a href="?page=modifyp&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-primary">Modifier</a>
+                    <a href="?page=modifyp&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-primary">Modifier</a>
                 </div>
                 <div class="col">
                     <a href="?page=publier&projet=" class="btn btn-info">Publier</a>

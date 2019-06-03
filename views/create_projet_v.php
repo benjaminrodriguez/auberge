@@ -10,14 +10,14 @@
     rows="5" cols="33">Description du Projet</textarea>
         <select required class="custom-select" name="semestre">
           <option selected disabled hidden value="error">Semestre</option>
-          <option value="s1">1</option>
-          <option value="s2">2</option>
-          <option value="s3">3</option>
-          <option value="s4">4</option>
-          <option value="s5">5</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
         </select>
     <div class="form-example"></br>
-        <input type="submit" value="Créer Projet !">
+        <input type="submit" class='btn btn-success' value="Créer Projet !">
     </div>
   </form>
 </html>

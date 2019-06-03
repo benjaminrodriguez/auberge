@@ -3,6 +3,22 @@
 
     <!-- <link href="./views/css/connectio.css" rel="stylesheet" type="text/css" /> -->
 
+<?php
+
+if (isset($_SESSION['errorconnect'])) {
+  ?>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Erreur!</strong> <?php echo $_SESSION['errorconnect'];
+    unset($_SESSION['errorconnect']);
+    ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  <?php
+}
+?>
+
 <div class="well"><center>
     <form enctype="multipart/form-data" action="index.php?page=firstconnect" id="monFormulaire" method="POST">   
         <input type="text"  placeholder="Nom" name="nom" required></br>

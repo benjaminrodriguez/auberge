@@ -14,7 +14,7 @@ function isRegister($pseudo,$password)
 function select_projetS($sm)
 {
   $bdd = bdd();
-      $query = "SELECT groupe.id, projet.nom, projet.id AS proj FROM `groupe` JOIN projet ON groupe.projet_id = projet.id AND groupe.semestre = :sm";
+      $query = "SELECT * FROM `projet` WHERE semestre = :sm AND statut='affecté'";
       $query_params = array(
         ':sm' => $sm
           );
@@ -180,6 +180,26 @@ function password_SELECT($id)
         return $donnees;
     }
 
+
+    function check_down($mail)
+    {
+      $bdd = bdd();
+          $query = "SELECT id FROM user WHERE mail LIKE :mail AND actif LIKE 'down';";
+          $query_params = array(
+            ':mail' => $mail
+              );
+    
+          try {
+              $stmt = $bdd->prepare($query);
+              $stmt->execute($query_params);
+          } catch(Exception $e) {
+              die('Erreur : ' . $e->getMessage());
+          }
+          $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          return $ans;
+    }
+
+    
 
 
 ?>

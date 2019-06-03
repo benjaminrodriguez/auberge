@@ -58,10 +58,10 @@ ob_start(); ?>
                 In'tech
                 </div>
                 <div class="col">
-                    <a href="?page=v&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-success">voir</a> 
+                    <a href="?page=v&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-success">voir</a> 
                 </div>
                 <div class="col">
-                    <a href="?page=modifyp&projet=<?php echo $s1[$key]['proj'];?>" class="btn btn-primary">modifier</a>
+                    <a href="?page=modifyp&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-primary">modifier</a>
                 </div>
                 <div class="col">
                     <?php 
@@ -163,10 +163,10 @@ ob_start(); ?>
                 In'tech
                 </div>
                 <div class="col">
-                    <a href="?page=v&projet=<?php echo $s2[$key]['proj'];?>" class="btn btn-success">voir</a> 
+                    <a href="?page=v&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-success">voir</a> 
                 </div>
                 <div class="col">
-                    <a href="#" class="btn btn-primary">modifier</a>
+                    <a href="?page=modifyp&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-primary">modifier</a>
                 </div>
                 <div class="col">
                 <?php 

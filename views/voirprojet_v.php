@@ -24,9 +24,12 @@
     <p class="card-text">
       Participants : 
       <?php 
-        foreach ($projet as $key => $value) {
-          echo $projet[$key]['name']." ";
-        } 
+        if (isset($auteurs[0])) {
+          foreach ($auteurs as $key => $value) {
+            echo $auteurs[$key]['name']." ";
+          } 
+        }
+        echo "<br>";
         echo $projet[0]['resume'];;?>
     </p> 
   </div>

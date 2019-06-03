@@ -14,11 +14,11 @@
       }
 
     function affecter_projetA(){
-        if(isConnect()){
-          affecter_projet($_GET['id']);
-          header('Location: index.php');
-        }
+      if(isConnect()){
+        affecter_projet($_GET['id']);
+        header('Location: index.php');
       }
+    }
 
     function listeE(){
         $liste = liste_eleve();

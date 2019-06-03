@@ -11,11 +11,11 @@ if (isset($_POST['nameProject']) && isset($_POST['describeProject']) && isset($_
     creation_projet_INSERT($_POST['nameProject'], $_POST['describeProject'], $entreprise, $_POST['semestre']);
 }
 
-if ($_POST['semestre'] == "s1")
+if (isset($_POST['semestre']) && $_POST['semestre'] == "s1")
 {
     // LANCEMENT SCRIPT VM S1
 }
-else if ($_POST['semestre'] == "s2") 
+else if (isset($_POST['semestre']) && $_POST['semestre'] == "s2") 
 {
     // LANCEMENT SCRIPT VM S2
 }
