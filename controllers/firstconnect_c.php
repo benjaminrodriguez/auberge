@@ -10,7 +10,7 @@ function rand_string( $length )
 if (isset($_POST['nom']) && isset($_POST['email'])) 
 {
   $check = check_down($_POST['email']);
-  //var_dump($check);
+  //var_dump($checkl);
 
   if (isset($check[0])) {
     

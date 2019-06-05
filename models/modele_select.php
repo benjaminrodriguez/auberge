@@ -14,7 +14,7 @@ function isRegister($pseudo,$password)
 function select_projetS($sm)
 {
   $bdd = bdd();
-      $query = "SELECT * FROM `projet` WHERE semestre = :sm AND statut='affecté'";
+      $query = "SELECT groupe.id, projet.nom, projet.id AS proj FROM `groupe` JOIN projet ON groupe.projet_id = projet.id AND groupe.semestre = :sm";
       $query_params = array(
         ':sm' => $sm
           );
@@ -48,31 +48,14 @@ function getname($sm)
       return $ans;
 }
 
-function voirauteurprojet($sm)
+function voirprojet($sm)
 {
   $bdd = bdd();
-      $query = "SELECT user.nom, user.prenom FROM user 
-      JOIN user_has_groupe ON user_has_groupe.user_id = user.id
-      JOIN groupe ON groupe.user_has_groupe_id = user_has_groupe.groupe_id
-      JOIN projet ON groupe.projet_id = projet.id AND projet.id = :id";
-      $query_params = array(
-        ':id' => $sm
-          );
-
-      try {
-          $stmt = $bdd->prepare($query);
-          $stmt->execute($query_params);
-      } catch(Exception $e) {
-          die('Erreur : ' . $e->getMessage());
-      }
-      $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $ans;
-}
-
-function voirprojet1($sm)
-{
-  $bdd = bdd();
-      $query = "SELECT * FROM `projet` WHERE id = :id";
+      $query = "SELECT user.nom AS name, projet.nom, groupe.semestre
+      FROM `groupe`
+      JOIN projet ON groupe.projet_id = projet.id AND projet.id = :id
+      JOIN user_has_groupe ON user_has_groupe.groupe_id = groupe.id
+      JOIN user ON user_has_groupe.user_id = user.id";
       $query_params = array(
         ':id' => $sm
           );
@@ -99,7 +82,7 @@ function liste_elev(){
 function voirdispo(){
   $bdd = bdd();
   $query = "SELECT projet.nom AS nomp, projet.id AS idp FROM `groupe` 
-  JOIN projet ON projet.id = groupe.projet_id AND projet.statut LIKE 'dispo'";
+  JOIN projet ON projet.id = groupe.projet_id AND statut LIKE 'dispo'";
   $query_params = array();
 
   try {
@@ -115,7 +98,7 @@ function voirdispo(){
 function voirdispoid($sm){
   $bdd = bdd();
   $query = "SELECT projet.nom AS nomp FROM `groupe` 
-  JOIN projet ON projet.id = groupe.projet_id AND projet.statut LIKE 'dispo' AND projet.id = :id";
+  JOIN projet ON projet.id = groupe.projet_id AND statut LIKE 'dispo' AND projet.id = :id";
   $query_params = array(
     ':id' => $sm
   );
@@ -133,7 +116,7 @@ function voirdispoid($sm){
 function select_acceptedprojetS($sm)
 {
   $bdd = bdd();
-      $query = "SELECT * FROM `projet` WHERE projet.statut LIKE 'qualifié' AND projet.semestre = :sm";
+      $query = "SELECT groupe.id, projet.nom, projet.id AS proj FROM `groupe` JOIN projet ON groupe.projet_id = projet.id AND groupe.semestre = :sm AND groupe.statut LIKE 'qualifié'";
       $query_params = array(
         ':sm' => $sm
           );
@@ -179,27 +162,31 @@ function password_SELECT($id)
         $donnees = $req->fetch();
         return $donnees;
     }
+ 
+function select_affec(){
+    $bdd = bdd();
+    $query = "SELECT use_has_groupe_id from groupe  WHERE `statut` = 'affecté'";
+    $req->execute(array(
+    ));
+    $result = $req->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+function select_ip_groupe($ip)
+{
+  $bdd = bdd();
+      $query = "SELECT groupe.id,AS group FROM `groupe` JOIN ip ON Ip_id = groupe.ip AND groupe.ip :ip ";
+      $query_params = array(
+        ':ip' => $ip
+          );
 
-
-    function check_down($mail)
-    {
-      $bdd = bdd();
-          $query = "SELECT id FROM user WHERE mail LIKE :mail AND actif LIKE 'down';";
-          $query_params = array(
-            ':mail' => $mail
-              );
-    
-          try {
-              $stmt = $bdd->prepare($query);
-              $stmt->execute($query_params);
-          } catch(Exception $e) {
-              die('Erreur : ' . $e->getMessage());
-          }
-          $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
-          return $ans;
-    }
-
-    
-
+      try {
+          $stmt = $bdd->prepare($query);
+          $stmt->execute($query_params);
+      } catch(Exception $e) {
+          die('Erreur : ' . $e->getMessage());
+      }
+      $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $ans;
+}
 
 ?>

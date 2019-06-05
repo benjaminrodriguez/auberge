@@ -14,15 +14,21 @@
       }
 
     function affecter_projetA(){
-      if(isConnect()){
-        affecter_projet($_GET['id']);
-        header('Location: index.php');
+        if(isConnect()){
+          affecter_projet($_GET['id']);
+          header('Location: index.php');
+        }
       }
-    }
 
     function listeE(){
         $liste = liste_eleve();
     }
+    function liste_affec(){
+      $affecte = select_affec();
+      $res = shell_exec('adduser.sh');
+
+    }
+    
 
     require(dirname(__FILE__).'/../views/gestion_v.php');
     require(dirname(__FILE__).'/../views/template.php');
