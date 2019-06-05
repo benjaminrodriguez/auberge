@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `auberge`.`projet` (
   `nom` VARCHAR(45) NULL,
   `resume` VARCHAR(45) NULL,
   `entreprise` VARCHAR(45) NULL,
-  `datepubliquation` DATETIME NULL,
+  `datepublication` DATETIME NULL,
   `semestre` VARCHAR(45) NULL,
   `statut` ENUM('dispo', 'qualifié', 'affecté') NULL,
   PRIMARY KEY (`id`))
