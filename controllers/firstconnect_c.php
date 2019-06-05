@@ -21,7 +21,7 @@ if (isset($_POST['nom']) && isset($_POST['email']))
     $avatar = "https://pbs.twimg.com/profile_images/464501040197287936/gpy18PJj_400x400.jpeg";
     upd_premiereconnect($_POST['email'], $_SESSION['passRand'], $avatar, $_POST['nom'], $_POST['prenom']); //update
     header('Location: index.php?page=confirmationFirstConnexion');
-    require("./controllers/envoiMail.php");
+    //require("./controllers/envoiMail.php");
   }
   else {
     $_SESSION['errorconnect'] = "L'adresse mail est déjà associée ou n'existe pas.";

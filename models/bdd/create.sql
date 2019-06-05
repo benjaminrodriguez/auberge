@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `auberge`.`projet` (
   `resume` VARCHAR(45) NULL,
   `entreprise` VARCHAR(45) NULL,
   `datepubliquation` DATETIME NULL,
+  `semestre` VARCHAR(45) NULL,
   `statut` ENUM('dispo', 'qualifié', 'affecté') NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;

@@ -2,13 +2,13 @@
     function creation_projet_INSERT($name, $desc, $entre, $sem)
     {
       $bdd = bdd();
-          $query = "INSERT INTO `projet`(`id`, `nom`, `resume`, `entreprise`, `datep`, `statut`, `semestre`) VALUES (NULL, :name , :desc, :entre, CURRENT_DATE, 'qualifié' , :sem)";
+          $query = "INSERT INTO `projet`(`id`, `nom`, `resume`, `entreprise`, `datepublication`, `statut`, `semestre`) VALUES (NULL, :name , :desc, :entre, CURRENT_DATE, 'qualifié' , :sem)";
           $query_params = array(
             ':name' => $name,
             ':desc' => $desc,
             ':sem' => $sem,
             ':entre' => $entre
-              );
+            );
     
           try {
               $stmt = $bdd->prepare($query);
@@ -17,7 +17,6 @@
               die('Erreur : ' . $e->getMessage());
           }
     }
-
     function newuser_INSERT($mail, $psw, $stat, $avatar, $nom, $prenom, $ecole)
     {
       $bdd = bdd();

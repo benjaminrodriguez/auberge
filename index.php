@@ -101,7 +101,7 @@
         }
         else if ($_GET['page'] == 'confirmationFirstConnexion') 
         {
-            require_once('controllers/confiramtionFristConnexion_c.php');
+            require_once('controllers/confirmationfirstconnect_c.php');
         }
         else 
         {
