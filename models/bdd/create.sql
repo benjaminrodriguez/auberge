@@ -44,7 +44,8 @@ CREATE TABLE IF NOT EXISTS `auberge`.`projet` (
   `nom` VARCHAR(45) NULL,
   `resume` VARCHAR(45) NULL,
   `entreprise` VARCHAR(45) NULL,
-  `datepubliquation` DATETIME NULL,
+  `semestre` VARCHAR(45) NULL,
+  `datepublication` DATETIME NULL,
   `statut` ENUM('dispo', 'qualifié', 'affecté') NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -66,7 +67,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `auberge`.`groupe` (
   `port` INT NOT NULL,
-  `statut` ENUM('dispo', 'qualifié', 'affecté') NOT NULL,
+  
   `id` INT NOT NULL AUTO_INCREMENT,
   `projet_id` INT NOT NULL,
   `Ip_id` INT NOT NULL,

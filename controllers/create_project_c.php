@@ -8,7 +8,9 @@ if (isset($_POST['nameProject']) && isset($_POST['describeProject']) && isset($_
     } else {
         $entreprise = $_POST['entreprise'];
     }
-    creation_projet_INSERT($_POST['nameProject'], $_POST['describeProject'], $entreprise, $_POST['semestre']);
+    $id = creation_projet_INSERT($_POST['nameProject'], $_POST['describeProject'], $entreprise, $_POST['semestre']);
+    header('Location: index.php?page=assoc&projet='.$id);
+    exit();
 }
 
 if (isset($_POST['semestre']) && $_POST['semestre'] == "s1")

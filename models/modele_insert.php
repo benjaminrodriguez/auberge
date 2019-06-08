@@ -16,6 +16,8 @@
           } catch(Exception $e) {
               die('Erreur : ' . $e->getMessage());
           }
+          $id = $bdd -> lastInsertId();
+        return($id);
     }
     function newuser_INSERT($mail, $psw, $stat, $avatar, $nom, $prenom, $ecole)
     {
@@ -38,5 +40,63 @@
               die('Erreur : ' . $e->getMessage());
           }
     }
+
+    function insert_newip()
+    {
+      $bdd = bdd();
+          $query = "INSERT INTO `ip`(`id`, `value`, `free`) VALUES (NULL,NULL,'yes');";
+          $query_params = array(
+            );
+    
+          try {
+              $stmt = $bdd->prepare($query);
+              $stmt->execute($query_params);
+          } catch(Exception $e) {
+              die('Erreur : ' . $e->getMessage());
+          }
+          $id = $bdd -> lastInsertId();
+        return($id);
+    }
+
+    function insert_newgrp($port, $pid, $iid)
+    {
+      $bdd = bdd();
+          $query = "INSERT INTO `groupe`(`port`, `id`, `projet_id`, `Ip_id`) VALUES (:port,NULL,:pid,:iid)";
+          $query_params = array(
+            ':port' => $port,
+            ':pid' => $pid,
+            ':iid' => $iid
+            );
+    
+          try {
+              $stmt = $bdd->prepare($query);
+              $stmt->execute($query_params);
+          } catch(Exception $e) {
+              die('Erreur : ' . $e->getMessage());
+          }
+          $id = $bdd -> lastInsertId();
+        return($id);
+    }
+    function insert_userhasgrp($uid, $gid)
+    {
+      $bdd = bdd();
+          $query = "INSERT INTO `user_has_groupe`(`user_id`, `groupe_id`, `id`) VALUES (:uid,:gid,NULL)";
+          $query_params = array(
+            ':uid' => $uid,
+            ':gid' => $gid
+            
+            );
+    
+          try {
+              $stmt = $bdd->prepare($query);
+              $stmt->execute($query_params);
+          } catch(Exception $e) {
+              die('Erreur : ' . $e->getMessage());
+          }
+          
+    }
+
+    
+
     
 ?>

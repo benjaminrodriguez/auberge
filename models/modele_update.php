@@ -79,5 +79,27 @@ function upd_project($name, $resume, $sm, $id){
     ));
 }
 
+function upd_userdispo($id){
+    $db = bdd();
+    $req = $db->prepare("UPDATE `user` SET `disponible`= 'n' WHERE `id` = :id;");
+    $req->execute(array(
+        
+            ':id' => $id  
+
+    ));
+}
+
+
+function upd_projdispo($id){
+    $db = bdd();
+    $req = $db->prepare("UPDATE `projet` SET `statut`= 'affecté' WHERE `id` = :id;");
+    $req->execute(array(
+        
+            ':id' => $id  
+
+    ));
+
+}
+
  
 ?>

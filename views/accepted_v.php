@@ -44,7 +44,7 @@
                 <div class="col">
                     <a href="?page=v&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-success">voir</a> 
                 
-                    <a href="#" class="btn btn-info">publier</a>
+                    <a href="?page=assoc&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-info">associer</a>
                 </div>
                 <br><br>
                 </div>
@@ -94,7 +94,7 @@
                 </div>
                 <div class="col">
                     <a href="?page=v&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-success">voir</a> 
-                    <a href="#" class="btn btn-info">publier</a>
+                    <a href="?page=assoc&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-info">associer</a>
                 </div>
                 <br><br>
                 </div>

@@ -1,4 +1,4 @@
-<?php ob_start(); ?>
+c<?php ob_start(); ?>
 <div class="well">
   <form action="" method="POST" class="form-example">
   A propos du Projet :

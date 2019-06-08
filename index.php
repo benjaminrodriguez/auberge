@@ -82,7 +82,10 @@
         {
             require_once('controllers/project_c.php');
         }
-        
+        else if ($_GET['page'] == 'assoc') 
+        {
+            require_once('controllers/assoc_c.php');
+        }        
         else
         {
             require_once('views/404.php');

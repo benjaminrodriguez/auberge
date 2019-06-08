@@ -177,5 +177,26 @@ function password_SELECT($id)
           $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
           return $ans;
     }
+
+    function select_elevelibre()
+    {
+      $bdd = bdd();
+          $query = "SELECT id, nom, prenom
+          FROM user
+          WHERE semestre = 1 AND actif LIKE 'up' AND statut LIKE 'eleve' AND disponible LIKE 'y';";
+          $query_params = array(
+            
+              );
     
+          try {
+              $stmt = $bdd->prepare($query);
+              $stmt->execute($query_params);
+          } catch(Exception $e) {
+              die('Erreur : ' . $e->getMessage());
+          }
+          $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          return $ans;
+    }
+
+      
 ?>
