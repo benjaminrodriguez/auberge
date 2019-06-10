@@ -20,14 +20,7 @@
         }
       }
 
-    function listeE(){
-        $liste = liste_eleve();
-    }
-    function liste_affec(){
-      $affecte = select_affec();
-      $res = shell_exec('adduser.sh');
-
-    }
+  
     
 
     require(dirname(__FILE__).'/../views/gestion_v.php');
