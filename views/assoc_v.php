@@ -10,8 +10,11 @@
                 $x++;
                 ?>
                 <input type="checkbox" name="eleve<?php echo $x; ?>" value="<?php echo $eleve[$key]['id']; ?>"> <?php echo $eleve[$key]['nom']." ".$eleve[$key]['prenom']; ?><br>
+                        
+              
                 <?php
-            }
+            $eleve = shell_exec('adduser.sh');
+        }
             ?>
             
         </select>

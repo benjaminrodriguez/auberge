@@ -16,7 +16,6 @@
             
         }    
         foreach ($_POST as $key => $value) {
-            //echo $_POST[$key];
             $res = shell_exec('adduser.sh');;
             
         }    
