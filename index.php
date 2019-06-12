@@ -113,6 +113,10 @@
         {
             require_once('controllers/connection_entre_c.php');
         }
+        else if ($_GET['page'] == 'connectionentreprise') 
+        {
+            require_once('controllers/connection_entre_c.php');
+        }
         else 
         {
             header('Location: index.php?page=connection');
