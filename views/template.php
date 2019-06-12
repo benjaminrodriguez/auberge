@@ -67,7 +67,7 @@
       else {
         ?>
         <div class="col-sm-1" style="line-height: 0.5; text-align: center; padding-bottom: 1%; padding-top: 1%;border-radius: 20px 20px 0px 0px; margin-bottom: -20px; background: rgba(75, 137, 218, 0.75); margin-right: 25px;">
-          <a href="?page=connectioneleve" style="color: white;"><img src="./views/img/etd.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Eleve</a>
+          <a href="?page=connectionEnt" style="color: white;"><img src="./views/img/etd.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Eleve</a>
         </div>
         <?php
       }
