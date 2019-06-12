@@ -27,5 +27,6 @@
 
        //var_dump(($_SESSION));
     }  
-    require(dirname(__FILE__).'/../views/connection_v.php');
+    require(dirname(__FILE__).'/../views/connection_eleve_v.php');
+    require(dirname(__FILE__).'/../views/template.php');
 ?>

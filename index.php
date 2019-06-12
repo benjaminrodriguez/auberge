@@ -20,10 +20,9 @@
             header('Location: index.php?page=home');
 
         }  
-        //else require_once('controllers/connection_Controllers.php');
         else 
         {
-            require_once('controllers/connection_c.php');
+            require_once('controllers/connection_all.php');
         }
 
     }
@@ -105,6 +104,14 @@
         else if ($_GET['page'] == 'confirmationFirstConnexion') 
         {
             require_once('controllers/confirmationfirstconnect_c.php');
+        }
+        else if ($_GET['page'] == 'connectioneleve') 
+        {
+            require_once('controllers/connection_eleve_c.php');
+        }
+        else if ($_GET['page'] == 'connectionentreprise') 
+        {
+            require_once('controllers/connection_entre_c.php');
         }
         else 
         {
