@@ -41,11 +41,12 @@
           }
     }
 
-    function insert_newip()
+    function insert_newip($pid)
     {
       $bdd = bdd();
-          $query = "INSERT INTO `ip`(`id`, `value`, `free`) VALUES (NULL,NULL,'yes');";
+          $query = "INSERT INTO `ip`(`id`, `value`, `free`) VALUES (NULL,:ip,'yes');";
           $query_params = array(
+            ':ip' => $pid
             );
     
           try {
