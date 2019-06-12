@@ -3,7 +3,7 @@
     if ($_POST && isset($_GET['projet'])) {
 
         var_dump($_POST);
-        $idlast = insert_newip();
+        $idlast = insert_newip(NULL); //ajouter la nouvelle ip du projet
         $idlast = insert_newgrp('5005',$_GET['projet'], $idlast);
         upd_projdispo($_GET['projet']);
         
@@ -15,10 +15,7 @@
             insert_userhasgrp($_POST[$key], $idlast);
             
         }    
-        foreach ($_POST as $key => $value) {
-            $res = shell_exec('adduser.sh');;
-            
-        }    
+       
 
         header('Location: index.php?page=v&projet='.$_GET['projet']);
         exit();
