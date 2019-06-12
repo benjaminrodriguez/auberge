@@ -15,10 +15,7 @@
             insert_userhasgrp($_POST[$key], $idlast);
             
         }    
-        foreach ($_POST as $key => $value) {
-            $res = shell_exec('adduser.sh');;
-            
-        }    
+       
 
         header('Location: index.php?page=v&projet='.$_GET['projet']);
         exit();
