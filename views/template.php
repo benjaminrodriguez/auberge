@@ -72,7 +72,7 @@
         ?>
         <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style ="padding=0px"><?php echo  $_SESSION['mail']; ?></a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="index.php?page=profile&menu=password">Changer mdp</a>
+          <a class="dropdown-item" href="index.php?page=profile&menu=password">Changer mot de passe</a>
           <a class="dropdown-item" href="index.php?page=profile&menu=picture">Changer image profile</a>
           <a class="dropdown-item" href="index.php?page=profile&menu=dc">Deconnexion</a>
         </div>
