@@ -81,7 +81,7 @@ $title='Gestion Projets';  ?>
                     <a href="?page=publier&projet=" class="btn btn-info">Publier</a>
                 </div>
                 </div>
-
+                <br>
                 <?php
 
             }

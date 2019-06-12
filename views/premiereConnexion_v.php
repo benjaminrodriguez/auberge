@@ -47,11 +47,27 @@ function verifymail (evt)
     {
          document.getElementById('monFormulaire').submit();
     }
+    else if(/\S+@\S+\.\S+/.test(document.getElementById("mail").value) && document.getElementById("mail").value.includes('@et.esiea.fr'))
+    {
+         document.getElementById('monFormulaire').submit();
+    }
+    else if(/\S+@\S+\.\S+/.test(document.getElementById("mail").value) && document.getElementById("mail").value.includes('@esiea.fr'))
+    {
+         document.getElementById('monFormulaire').submit();
+    }
 }
 
 function emailIsValid () 
 {
   if(/\S+@\S+\.\S+/.test(document.getElementById("mail").value) && document.getElementById("mail").value.includes('@intechinfo.fr'))
+  {
+    document.getElementById("mail").style.color = "green";
+  }
+  else if(/\S+@\S+\.\S+/.test(document.getElementById("mail").value) && document.getElementById("mail").value.includes('@et.esiea.fr'))
+  {
+    document.getElementById("mail").style.color = "green";
+  }
+  else if(/\S+@\S+\.\S+/.test(document.getElementById("mail").value) && document.getElementById("mail").value.includes('@esiea.fr'))
   {
     document.getElementById("mail").style.color = "green";
   }

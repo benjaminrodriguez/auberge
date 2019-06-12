@@ -47,7 +47,7 @@ function voirauteurprojet($sm)
   $bdd = bdd();
       $query = "SELECT user.nom, user.prenom FROM user 
       JOIN user_has_groupe ON user_has_groupe.user_id = user.id
-      JOIN groupe ON groupe.user_has_groupe_id = user_has_groupe.groupe_id
+      JOIN groupe ON groupe.id = user_has_groupe.groupe_id
       JOIN projet ON groupe.projet_id = projet.id AND projet.id = :id";
       $query_params = array(
         ':id' => $sm
