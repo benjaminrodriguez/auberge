@@ -134,7 +134,7 @@ function select_acceptedprojetS($sm)
 function select_connect($mail, $psw)
 {
   $bdd = bdd();
-      $query = "SELECT `id`,`statut`, `avatar`, `mail`,`nom`, `prenom`, `nom_ecole` FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw WHERE 'statut' LIKE 'eleve'";
+      $query = "SELECT * FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw AND statut LIKE 'eleve' OR statut LIKE 'prof'";
       $query_params = array(
         ':mail' => $mail,
         ':psw' => $psw
@@ -152,7 +152,7 @@ function select_connect($mail, $psw)
 function select_connect2($mail, $psw)
 {
   $bdd = bdd();
-      $query = "SELECT `id`,`statut`, `avatar`, `mail`,`nom`, `prenom`, `nom_ecole` FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw WHERE 'statut' LIKE 'entre'";
+      $query = "SELECT * FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw AND statut LIKE 'entre'";
       $query_params = array(
         ':mail' => $mail,
         ':psw' => $psw

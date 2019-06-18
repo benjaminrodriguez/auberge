@@ -1,5 +1,6 @@
 <?php
     session_start();
+    var_dump($_SESSION);
 
     //var_dump($_SESSION);
    
@@ -113,10 +114,6 @@
         {
             require_once('controllers/connection_entre_c.php');
         }
-        else if ($_GET['page'] == 'connectionentreprise') 
-        {
-            require_once('controllers/connection_entre_c.php');
-        }
         else if ($_GET['page'] == 'inscriptionentre') 
         {
             require_once('controllers/inscription_entre_c.php');
@@ -126,7 +123,6 @@
             header('Location: index.php?page=connection');
             exit();
         }
-        
     }
 
     else 

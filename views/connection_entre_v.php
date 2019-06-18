@@ -15,18 +15,16 @@ if (isset($_SESSION['errorconnect'])) {
   <?php
 }
 ?>
-
 <div style="padding-right: 30%; padding-left: 30%;">
 <div class="well" style="padding-right: 5%; padding-left: 5%;padding-top: 5%">
+
     <form id="form" class="form-signin" action="index.php?page=connection" method="POST"> 
         <input type="text" name="username" class="form-control" placeholder="Adresse mail" required autofocus>
-
         <label for="inputPassword" class="sr-only"></label><br>
         <input type="password" name="password" value="" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
-
-        
         <br><center><button class=" btn btn-success" style="font-size:1.2em; text-align: center">Connexion</button></center>
     </form>
+
     </div>
 <div>
        

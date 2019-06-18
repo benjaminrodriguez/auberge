@@ -4,7 +4,7 @@
     {
         //RECUPERE LES DONNEES DE L'USER
        // $data = connection_SELECT($_POST['username']);
-       $data = select_connectentre($_POST['username'], $_POST['password']);
+       $data = select_connect2($_POST['username'], $_POST['password']);
        sleep(1);
         
        //var_dump($data);
@@ -18,7 +18,7 @@
         $_SESSION['phone'] = $data[0]['phone'];
         $_SESSION['nom_ecole'] = $data[0]['nom_ecole'];
         $_SESSION['mail'] = $data[0]['mail'];
-        header('Location: index.php?page=home');
+        header('Location: index.php?page=connection');
         exit;    
     }
     else {

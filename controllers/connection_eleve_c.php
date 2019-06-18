@@ -18,7 +18,7 @@
         $_SESSION['prenom'] = $data[0]['prenom'];
         $_SESSION['nom_ecole'] = $data[0]['nom_ecole'];
         $_SESSION['mail'] = $data[0]['mail'];
-        header('Location: index.php?page=home');
+        header('Location: index.php?page=connection');
         exit;    
     }
     else {
