@@ -30,7 +30,7 @@ if (isset($_SESSION['errorconnect'])) {
     </div>
 <div>
        
-<br><center> <a href =".?page=firstconnect"  button class=" btn btn-success" style="font-size:1.2em; text-align: center">Inscription</button></center></a>
+<br><center> <a href =".?page=inscriptionentre"  button class=" btn btn-success" style="font-size:1.2em; text-align: center">Inscription</button></center></a>
 </div>
 </div>
 

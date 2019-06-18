@@ -97,7 +97,28 @@
           
     }
 
-    
+  function insert_entre($mail, $psw, $nom, $prenom, $entre, $phone)
+  {
+    $bdd = bdd();
+        $query = "    INSERT INTO `user`(`id`, `mail`, `password`, `statut`, `avatar`, `semestre`, `nom`, `prenom`, `nom_ecole`, `actif`, `disponible`, `phone`) 
+        VALUES ( NULL, :mail,:psw,'entre',NULL ,NULL,:nom,:prenom,:entre,'up','y', :phone)";
+        $query_params = array(
+          ':mail' => $mail,
+          ':psw' => $psw,
+          ':nom' => $nom,
+          ':prenom' => $prenom,
+          ':entre' => $entre,
+          ':phone' => $phone        
+          );
+  
+        try {
+            $stmt = $bdd->prepare($query);
+            $stmt->execute($query_params);
+        } catch(Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        
+}    
 
     
 ?>

@@ -134,7 +134,25 @@ function select_acceptedprojetS($sm)
 function select_connect($mail, $psw)
 {
   $bdd = bdd();
-      $query = "SELECT `id`,`statut`, `avatar`, `mail`,`nom`, `prenom`, `nom_ecole` FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw";
+      $query = "SELECT `id`,`statut`, `avatar`, `mail`,`nom`, `prenom`, `nom_ecole` FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw WHERE 'statut' LIKE 'eleve'";
+      $query_params = array(
+        ':mail' => $mail,
+        ':psw' => $psw
+          );
+      try {
+          $stmt = $bdd->prepare($query);
+          $stmt->execute($query_params);
+      } catch(Exception $e) {
+          die('Erreur : ' . $e->getMessage());
+      }
+      $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $ans;
+}
+
+function select_connect2($mail, $psw)
+{
+  $bdd = bdd();
+      $query = "SELECT `id`,`statut`, `avatar`, `mail`,`nom`, `prenom`, `nom_ecole` FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw WHERE 'statut' LIKE 'entre'";
       $query_params = array(
         ':mail' => $mail,
         ':psw' => $psw

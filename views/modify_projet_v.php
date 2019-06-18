@@ -1,9 +1,9 @@
 c<?php ob_start(); ?>
 <div class="well">
   <form action="" method="POST" class="form-example">
-  A propos du Projet :
+  <h4>A propos du Projet :</h4><br>
     <div class="form-example">
-        <label for="nameProject">Nom du projet : </label>
+        <label for="nameProject">Nom du projet : </label> <br>
         <input type="text" name="nameProject" id="nameProject" value="<?php echo $projet[0]['nom']; ?>" required>
     </div>
     Description :
