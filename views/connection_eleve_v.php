@@ -18,7 +18,7 @@ if (isset($_SESSION['errorconnect'])) {
 <div style="padding-right: 30%; padding-left: 30%;">
 <div class="well" style="padding-right: 5%; padding-left: 5%;padding-top: 5%">
 
-    <form id="form" class="form-signin" action="index.php?page=connection" method="POST"> 
+    <form id="form" class="form-signin" action="index.php?page=connectioneleve" method="POST"> 
         <input type="text" name="username" class="form-control" placeholder="Adresse mail INTECH" required autofocus>
         <label for="inputPassword" class="sr-only"></label><br>
         <input type="password" name="password" value="" id="inputPassword" class="form-control" placeholder="Mot de passe" required>

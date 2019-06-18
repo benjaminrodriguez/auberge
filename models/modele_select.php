@@ -80,10 +80,14 @@ function voirprojet1($sm)
 function liste_elev(){
     $bdd =bdd();
     $query = "SELECT nom,prenom,id from user WHERE `statut` = 'eleve'";
-    $req->execute(array(
-      ));
-      $result = $req->fetch(PDO::FETCH_ASSOC);
-      return $result;
+    try {
+        $stmt = $bdd->prepare($query);
+        $stmt->execute();
+    } catch(Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+    $ans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $ans;
 }
 function voirdispo(){
   $bdd = bdd();
@@ -134,7 +138,7 @@ function select_acceptedprojetS($sm)
 function select_connect($mail, $psw)
 {
   $bdd = bdd();
-      $query = "SELECT * FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw AND statut LIKE 'eleve' OR statut LIKE 'prof'";
+      $query = "SELECT * FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw AND statut LIKE 'eleve'";
       $query_params = array(
         ':mail' => $mail,
         ':psw' => $psw
