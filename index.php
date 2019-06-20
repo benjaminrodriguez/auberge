@@ -1,7 +1,7 @@
 <?php
     session_start();
     var_dump($_SESSION);
-
+    var_dump($_POST);
     //var_dump($_SESSION);
    
 
@@ -57,7 +57,11 @@
         else if ($_GET['page'] == 'prop')
         {
             require_once('controllers/prop_c.php');
-        }        
+        }    
+        else if ($_GET['page'] == 'propentre')
+        {
+            require_once('controllers/propentre_c.php');
+        }    
         else if ($_GET['page'] == 'create_projet') 
         {
             require_once('Controllers/create_project_c.php');

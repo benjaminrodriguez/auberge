@@ -67,7 +67,7 @@ ob_start(); ?>
                     <?php 
                     if (isset($_SESSION['role']) && $_SESSION['role'] === "prof") {
                         ?>
-                        <a href="#" class="btn btn-info">publier</a>
+                        
                         <?php
                     }
                     ?>
@@ -80,30 +80,8 @@ ob_start(); ?>
             }
         }
         ?>
-        <!-- <div class="row align-items-start">
-            <div class="col">
-            Auberge
-            </div>
-            <div class="col">
-            Hergeur
-            </div>
-            <div class="col">
-            Y B E
-            </div>
-            <div class="col">
-            In'tech
-            </div>
-            <div class="col">
-                <a href="#" class="btn btn-success">voir</a> 
-            </div>
-            <div class="col">
-               <a href="#" class="btn btn-primary">modifier</a>
-            </div>
-            <div class="col">
-                <a href="#" class="btn btn-info">publier</a>
-            </div>
-        </div>
-    -->
+        
+
 
 
     </div>
@@ -164,7 +142,7 @@ ob_start(); ?>
                 In'tech
                 </div>
                 <div class="col">
-                    <a href="?page=v&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-success">voir</a> 
+                    <a href="?page=v&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-success">voir</a> <!-- pas dispo pas connecte -->
                 </div>
                 <div class="col">
                     <a href="?page=modifyp&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-primary">modifier</a>
@@ -173,7 +151,7 @@ ob_start(); ?>
                 <?php 
                     if (isset($_SESSION['role']) && $_SESSION['role'] === "prof") {
                         ?>
-                        <a href="#" class="btn btn-info">publier</a>
+                       
                         <?php
                     }
                     ?>

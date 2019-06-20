@@ -8,6 +8,7 @@
        sleep(1);
         
        //var_dump($data);
+       
         if (isset($data[0])) {
 
             $_SESSION['id'] = $data[0]['id'];

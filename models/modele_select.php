@@ -138,7 +138,7 @@ function select_acceptedprojetS($sm)
 function select_connect($mail, $psw)
 {
   $bdd = bdd();
-      $query = "SELECT * FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw AND statut LIKE 'eleve'";
+      $query = "SELECT * FROM `user` WHERE user.mail LIKE :mail AND user.password LIKE :psw AND nom_ecole LIKE 'intech'";
       $query_params = array(
         ':mail' => $mail,
         ':psw' => $psw

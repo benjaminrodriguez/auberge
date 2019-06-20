@@ -78,6 +78,8 @@
           $id = $bdd -> lastInsertId();
         return($id);
     }
+
+
     function insert_userhasgrp($uid, $gid)
     {
       $bdd = bdd();
@@ -97,18 +99,19 @@
           
     }
 
-  function insert_entre($mail, $psw, $nom, $prenom, $entre, $phone)
+  function insert_entre($mail, $psw, $nom, $prenom, $entre, $phone,$av)
   {
     $bdd = bdd();
-        $query = "    INSERT INTO `user`(`id`, `mail`, `password`, `statut`, `avatar`, `semestre`, `nom`, `prenom`, `nom_ecole`, `actif`, `disponible`, `phone`) 
-        VALUES ( NULL, :mail,:psw,'entre',NULL ,NULL,:nom,:prenom,:entre,'up','y', :phone)";
+        $query = "INSERT INTO `user`(`id`, `mail`, `password`, `statut`, `avatar`, `semestre`, `nom`, `prenom`, `nom_ecole`, `actif`, `disponible`, `phone`) 
+        VALUES ( NULL, :mail,:psw,'entre', :av ,NULL,:nom,:prenom,:entre,'up','y', :phone)";
         $query_params = array(
           ':mail' => $mail,
           ':psw' => $psw,
           ':nom' => $nom,
           ':prenom' => $prenom,
           ':entre' => $entre,
-          ':phone' => $phone        
+          ':phone' => $phone,
+          ':av' => $av        
           );
   
         try {
@@ -120,5 +123,26 @@
         
 }    
 
+function insert_projetentre($nom, $desc,$entre,$char,$logo)
+{
+  $bdd = bdd();
+      $query = "INSERT INTO `projet`(`id`, `nom`, `resume`, `entreprise`, `semestre`, `datepublication`, `charte`, `logo`, `statut`) VALUES (NULL,:nom,:desc,:entre,NULL,CURRENT_DATE,:char,:logo,'dispo')";
+      
+      $query_params = array(
+        ':nom' => $nom,
+        ':desc' => $desc,
+        ':entre' => $entre,
+        ':char' => $char,
+        ':logo' => $logo
+        );
+
+      try {
+          $stmt = $bdd->prepare($query);
+          $stmt->execute($query_params);
+      } catch(Exception $e) {
+          die('Erreur : ' . $e->getMessage());
+      }
+      
+}
     
 ?>

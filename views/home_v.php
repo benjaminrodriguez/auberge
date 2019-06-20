@@ -138,6 +138,16 @@ if ($_SESSION['statut'] === "prof") {
     <?php
 
 }
+ else if($_SESSION['statut'] === "entre") {
+    ?>
+        <div class="well">
+            <a href="?page=propentre" class="btn btn-success">Proposer sujet</a> 
+
+        </div>
+
+    <?php
+
+}
 ?>
 
 
