@@ -2,14 +2,14 @@
 
 <div class="card" style="color: black">
   <h5 class="card-header" style ="line-height: 10px;">
-    <div style="margin-top: 10px"><?php echo $projet[0]['nomp'];?><br><br><br><?php if(isset($projet[0]['logo'])) echo "<img src='./views/doc/logo/".$projet[0]['logo']."' width='300'>";?></div>
+    <div style="margin-top: 10px"><?php echo $projet[0]['nomp'];?></div>
   
   <div class="float-right">
 
     <!--<a href="#" class="btn btn-success">Accepter</a>-->
     
-    <a href="#" class="btn btn-primary">Contacter Entreprise</a>
-    <a href="#" class="btn btn-danger">Refuser</a>
+    <a href="#" disabled class="btn btn-primary">Contacter Entreprise</a>
+    <a href="#" disabled class="btn btn-danger">Refuser</a>
     <br> <br>
     
     <form action="?page=prop&projet=<?php echo $_GET['projet'] ?>" method="POST">
@@ -37,6 +37,7 @@
     <h5>Description</h5>
     <p class="card-text"><?php echo $descr;?>
   </p>
+  <?php if(isset($projet[0]['logo'])) echo "<img src='./views/doc/logo/".$projet[0]['logo']."' width='300'>";?>
     
   </div>
 </div>
