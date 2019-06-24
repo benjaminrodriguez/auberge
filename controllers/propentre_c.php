@@ -12,7 +12,7 @@ var_dump($_POST);
             if ($_FILES['projectpic']['type'] == 'image/png' || $_FILES['projectpic']['type'] == 'image/jpg' || $_FILES['projectpic']['type'] == 'image/jpeg') {
                 if (!is_file('./views/doc/logo'.$_FILES['projectpic']['name'])) {
     
-                $uploaddir = './views/doc/logo';
+                $uploaddir = './views/doc/logo/';
                 $uploadfile = $uploaddir . basename($_FILES['projectpic']['name']);
                 move_uploaded_file($_FILES['projectpic']['tmp_name'], $uploadfile);
 

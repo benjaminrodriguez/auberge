@@ -2,7 +2,7 @@
 
 <div class="card" style="color: black">
   <h5 class="card-header" style ="line-height: 10px;">
-    <div style="margin-top: 10px"><?php echo $projet[0]['nomp'];?></div>
+    <div style="margin-top: 10px"><?php echo $projet[0]['nomp'];?><br><br><br><?php if(isset($projet[0]['logo'])) echo "<img src='./views/doc/logo/".$projet[0]['logo']."' width='300'>";?></div>
   
   <div class="float-right">
 

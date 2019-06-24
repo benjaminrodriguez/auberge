@@ -91,8 +91,7 @@ function liste_elev(){
 }
 function voirdispo(){
   $bdd = bdd();
-  $query = "SELECT projet.nom AS nomp, projet.id AS idp FROM `groupe` 
-  JOIN projet ON projet.id = groupe.projet_id AND projet.statut LIKE 'dispo'";
+  $query = "SELECT projet.nom AS nomp, projet.id AS idp FROM projet WHERE statut LIKE 'dispo'";
   $query_params = array();
   try {
       $stmt = $bdd->prepare($query);
@@ -105,8 +104,7 @@ function voirdispo(){
 }
 function voirdispoid($sm){
   $bdd = bdd();
-  $query = "SELECT projet.nom AS nomp FROM `groupe` 
-  JOIN projet ON projet.id = groupe.projet_id AND projet.statut LIKE 'dispo' AND projet.id = :id";
+  $query = "SELECT projet.nom AS nomp, charte,logo FROM projet WHERE projet.statut LIKE 'dispo' AND projet.id = :id";
   $query_params = array(
     ':id' => $sm
   );
