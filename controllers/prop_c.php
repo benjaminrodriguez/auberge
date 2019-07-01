@@ -1,7 +1,7 @@
 <?php
 
     $auteur= "moi";
-    $descr= "fzneiobnenfzipppppppppppppppppppeznifpezfipeznfipeznfipeznfipeznfipeznfipeznfipeznfipezfeznipppppppppppppppppppppppppppppppppppppppppppppppppppzefffffffffff";
+    $descr= "Pas de descritpion";
     $titre= "TEST TITRE";
 
     if (isset($_POST['semestre']) && isset($_GET['projet']) && $_POST['semestre'] !== 'error') {
