@@ -43,7 +43,9 @@ ob_start(); ?>
                 <?php echo $s1[$key]['nom']; ?>
                 </div>
                 <div class="col">
-                BESOIN RESME
+                    <?php
+                    if (isset($s1[$key]['resume'])) echo $s1[$key]['resume'];
+                    ?>
                 </div>
                 <div class="col">
                     <?php
@@ -58,7 +60,7 @@ ob_start(); ?>
                 In'tech
                 </div>
                 <div class="col">
-                    <a href="?page=v&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-success">voir</a> 
+                    <a href="?page=v&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-success">Voir</a> 
                 </div>
                 <div class="col">
                 <a href="?page=v&projet=<?php echo $s1[$key]['url'];?>" class="btn btn-info">Consulter</a>
@@ -67,7 +69,7 @@ ob_start(); ?>
                         <?php 
                     if (isset($_SESSION['statut']) && $_SESSION['statut'] === "prof") {
                         ?>
-                            <a href="?page=modifyp&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-primary">modifier</a>
+                            <a href="?page=modifyp&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-primary">Modifier</a>
                         
                         <?php
                     }
@@ -128,7 +130,9 @@ ob_start(); ?>
                 <?php echo $s2[$key]['nom']; ?>
                 </div>
                 <div class="col">
-                BESOIN RESME
+                <?php
+                    if (isset($s1[$key]['resume'])) echo $s1[$key]['resume'];
+                    ?>
                 </div>
                 <div class="col">
                     <?php
@@ -143,7 +147,7 @@ ob_start(); ?>
                 In'tech
                 </div>
                 <div class="col">
-                    <a href="?page=v&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-success">voir</a> <!-- pas dispo pas connecte -->
+                    <a href="?page=v&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-success">Voir</a> <!-- pas dispo pas connecte -->
                 </div>
                 <div class="col">
                 <a href="<?php echo $s2[$key]['url'];?>" class="btn btn-info">Consulter</a>
@@ -152,7 +156,7 @@ ob_start(); ?>
                         <?php 
                     if (isset($_SESSION['statut']) && $_SESSION['statut'] === "prof") {
                         ?>
-                        <a href="?page=modifyp&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-primary">modifier</a>
+                        <a href="?page=modifyp&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-primary">Modifier</a>
                        
                         <?php
                     }
