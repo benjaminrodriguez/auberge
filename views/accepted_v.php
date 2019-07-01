@@ -1,6 +1,6 @@
 <?php $title='Gestion Projets';  ?>
 <?php ob_start(); ?>
-
+<a href="?page=gestion"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Retour</button></a><br><br>
 <div class="well">
 
 <div class="card" style="color: black;">
