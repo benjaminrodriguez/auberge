@@ -29,7 +29,8 @@ function getname($sm)
 {
   $bdd = bdd();
       $query = "SELECT user.nom FROM user
-      JOIN user_has_groupe ON user_has_groupe.user_id = user.id AND user_has_groupe.groupe_id = :id";
+      JOIN user_has_groupe ON user_has_groupe.user_id = user.id
+      JOIN groupe ON user_has_groupe.groupe_id = groupe.id AND groupe.projet_id LIKE :id";
       $query_params = array(
         ':id' => $sm
           );
@@ -198,13 +199,14 @@ function password_SELECT($id)
           return $ans;
     }
 
-    function select_elevelibre()
+    function select_elevelibre($sm)
     {
       $bdd = bdd();
           $query = "SELECT id, nom, prenom
           FROM user
-          WHERE semestre = 1 AND actif LIKE 'up' AND statut LIKE 'eleve' AND disponible LIKE 'y';";
+          WHERE semestre = :sm  AND actif LIKE 'up' AND statut LIKE 'eleve' AND disponible LIKE 'y';";
           $query_params = array(
+              ":sm" => $sm
             
               );
     

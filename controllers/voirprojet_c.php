@@ -1,8 +1,8 @@
 <?php
 
-$auteur= "moi";
-$descr= "fzneiobnenfzipppppppppppppppppppeznifpezfipeznfipeznfipeznfipeznfipeznfipeznfipeznfipezfeznipppppppppppppppppppppppppppppppppppppppppppppppppppzefffffffffff";
-$titre= "TEST TITRE";
+$auteur= "In'tech";
+$descr= "Il n'y a pas de résumé disponible.";
+$titre= "Titre";
     if (isset($_GET['projet'])) {
         //RECUP LES INFOS DANS LA BDD SUR LA PROPOSITION
         //echo $_GET['projet'];
