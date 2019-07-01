@@ -114,7 +114,7 @@ if ($_SESSION['statut'] === "prof") {
                                 <h5 class="card-title">In'tech</h5>
                                 <p class="card-text">Forum communautaire pour IN'TECH.</p>
                                 <a href="#" class="btn btn-primary">Voir plus</a>
-                                <a href="#" class="btn btn-primary" style="float: right;">Ma VM</a>
+                                <a href="http://192.168.152.150/Agora/index.php" class="btn btn-primary" style="float: right;">Ma VM</a>
                             </div>
                         </div>
                     </div>
@@ -126,7 +126,7 @@ if ($_SESSION['statut'] === "prof") {
                                 <h5 class="card-title">In'tech</h5>
                                 <p class="card-text">Jeu de poker en ligne.</p>
                                 <a href="#" class="btn btn-primary">Voir plus</a>
-                                <a href="#" class="btn btn-primary" style="float: right;">Ma VM</a>
+                                <a href="http://192.168.152.151:5000" class="btn btn-primary" style="float: right;">Ma VM</a>
                             </div>
                         </div>
                     </div>

@@ -63,7 +63,7 @@ ob_start(); ?>
                     <a href="?page=v&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-success">Voir</a> 
                 </div>
                 <div class="col">
-                <a href="?page=v&projet=<?php echo $s1[$key]['url'];?>" class="btn btn-info">Consulter</a>
+                <a href="<?php echo $s1[$key]['url'];?>" class="btn btn-info" target="_blank">Consulter</a>
                     </div>
                     <div class="col">
                         <?php 
@@ -74,10 +74,11 @@ ob_start(); ?>
                         <?php
                     }
                     ?>
-                </div>
-                </div>
+                </div><br>
                 <br>
 
+                </div>
+                <br>
                 <?php
 
             }
@@ -131,7 +132,7 @@ ob_start(); ?>
                 </div>
                 <div class="col">
                 <?php
-                    if (isset($s1[$key]['resume'])) echo $s1[$key]['resume'];
+                    if (isset($s2[$key]['resume'])) echo $s2[$key]['resume'];
                     ?>
                 </div>
                 <div class="col">
@@ -150,7 +151,7 @@ ob_start(); ?>
                     <a href="?page=v&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-success">Voir</a> <!-- pas dispo pas connecte -->
                 </div>
                 <div class="col">
-                <a href="<?php echo $s2[$key]['url'];?>" class="btn btn-info">Consulter</a>
+                <a href="<?php echo $s2[$key]['url'];?>" class="btn btn-info" target="_blank">Consulter</a>
                     </div>
                     <div class="col">
                         <?php 
@@ -161,8 +162,12 @@ ob_start(); ?>
                         <?php
                     }
                     ?>
-                </div>
-                </div>
+                </div><br>
+                <br>
+
+                </div><br>
+                <br>
+
 
                 <?php
 
@@ -170,7 +175,8 @@ ob_start(); ?>
         }
         ?>
     </div>
-    <br>
+
+
 </div>
 <br>
 <?php $content = ob_get_clean(); ?>
