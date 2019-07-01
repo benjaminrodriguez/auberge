@@ -146,9 +146,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `auberge`;
-INSERT INTO `auberge`.`projet` (`id`, `nom`, `statut`) VALUES (NULL, 'un', 'dispo');
-INSERT INTO `auberge`.`projet` (`id`, `nom`, `statut`) VALUES (NULL, 'deux', 'dispo');
-INSERT INTO `auberge`.`projet` (`id`, `nom`, `statut`) VALUES (NULL, 'trois', 'dispo');
+INSERT INTO `auberge`.`projet` (`id`, `nom`, `statut`) VALUES (NULL, 'projetUn', 'dispo');
+INSERT INTO `auberge`.`projet` (`id`, `nom`, `statut`) VALUES (NULL, 'projetDeux', 'dispo');
+INSERT INTO `auberge`.`projet` (`id`, `nom`, `statut`) VALUES (NULL, 'projetTrois', 'dispo');
 
 COMMIT;
 
