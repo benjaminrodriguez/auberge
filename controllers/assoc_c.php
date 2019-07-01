@@ -20,8 +20,8 @@
         header('Location: index.php?page=v&projet='.$_GET['projet']);
         exit();
     }
-
-    $eleve = select_elevelibre();
+    $sm = voirprojet1($_GET['projet']);
+    $eleve = select_elevelibre($sm[0]['semestre']);
     //var_dump($_POST);
 
     require(dirname(__FILE__).'/../views/assoc_v.php');

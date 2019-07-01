@@ -2,7 +2,7 @@
 
 function affecter_projet($groupeId, $sem) {
     $db = bdd();
-    $req = $db->prepare("UPDATE `projet` SET `statut`= 'affecté', `semestre`= :sem  WHERE projet.id = :id");
+    $req = $db->prepare("UPDATE `projet` SET `statut`= 'qualifié', `semestre`= :sem  WHERE projet.id = :id");
     $req->execute(array(
       ":id" => $groupeId,
       ":sem" => $sem
