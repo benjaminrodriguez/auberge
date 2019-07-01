@@ -8,7 +8,7 @@ $titre= "TEST TITRE";
         //echo $_GET['projet'];
         $projet = voirprojet1($_GET['projet']);
 
-        var_dump($projet);
+        //var_dump($projet);
         if($projet[0]['statut'] == "affecté") {
 
             $auteurs = voirauteurprojet($_GET['projet']);

@@ -24,7 +24,7 @@
     <p class="card-text">
       Participants : 
       <?php 
-      var_dump($auteurs);
+      //var_dump($auteurs);
         if (isset($auteurs[0])) {
           foreach ($auteurs as $key => $value) {
             echo $auteurs[$key]['nom']." ".$auteurs[$key]['prenom']." ";

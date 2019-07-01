@@ -2,7 +2,7 @@
 
     if ($_POST && isset($_GET['projet'])) {
 
-        var_dump($_POST);
+        //var_dump($_POST);
         $idlast = insert_newip(NULL); //ajouter la nouvelle ip du projet
         $idlast = insert_newgrp('5005',$_GET['projet'], $idlast);
         upd_projdispo($_GET['projet']);
@@ -22,7 +22,7 @@
     }
 
     $eleve = select_elevelibre();
-    var_dump($_POST);
+    //var_dump($_POST);
 
     require(dirname(__FILE__).'/../views/assoc_v.php');
     require(dirname(__FILE__).'/../views/template.php');

@@ -109,10 +109,10 @@ if ($_SESSION['statut'] === "prof") {
                 <div class="row">
                     <div class="col-sm">
                         <div class="card">
-                            <h5 class="card-header">Titre proposition</h5>
+                            <h5 class="card-header">Agora</h5>
                             <div class="card-body">
-                                <h5 class="card-title">Entreprise</h5>
-                                <p class="card-text">Résumé proposition</p>
+                                <h5 class="card-title">In'tech</h5>
+                                <p class="card-text">Forum communautaire pour IN'TECH.</p>
                                 <a href="#" class="btn btn-primary">Voir plus</a>
                                 <a href="#" class="btn btn-primary" style="float: right;">Ma VM</a>
                             </div>
@@ -121,10 +121,10 @@ if ($_SESSION['statut'] === "prof") {
                     &nbsp
                     <div class="col-sm">  
                         <div class="card">
-                            <h5 class="card-header">Titre proposition</h5>
+                            <h5 class="card-header">ALL'INTECH</h5>
                             <div class="card-body">
-                                <h5 class="card-title">Entreprise</h5>
-                                <p class="card-text">Résumé proposition</p>
+                                <h5 class="card-title">In'tech</h5>
+                                <p class="card-text">Jeu de poker en ligne.</p>
                                 <a href="#" class="btn btn-primary">Voir plus</a>
                                 <a href="#" class="btn btn-primary" style="float: right;">Ma VM</a>
                             </div>
