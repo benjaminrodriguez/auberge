@@ -114,7 +114,7 @@ if ($_SESSION['statut'] === "prof") {
                                 <h5 class="card-title">In'tech</h5>
                                 <p class="card-text">Forum communautaire pour IN'TECH.</p>
                                 <a href="#" class="btn btn-primary">Voir plus</a>
-                                <a href="http://192.168.152.150/Agora/index.php" class="btn btn-primary" style="float: right;">Ma VM</a>
+                                <a href="http://192.168.152.153/Agora/index.php" class="btn btn-primary" style="float: right;" target="_blank">Ma VM</a>
                             </div>
                         </div>
                     </div>
@@ -126,7 +126,7 @@ if ($_SESSION['statut'] === "prof") {
                                 <h5 class="card-title">In'tech</h5>
                                 <p class="card-text">Jeu de poker en ligne.</p>
                                 <a href="#" class="btn btn-primary">Voir plus</a>
-                                <a href="http://192.168.152.151:5000" class="btn btn-primary" style="float: right;">Ma VM</a>
+                                <a href="http://192.168.152.156:5000" class="btn btn-primary" style="float: right;" target="_blank">Ma VM</a>
                             </div>
                         </div>
                     </div>
@@ -141,7 +141,7 @@ if ($_SESSION['statut'] === "prof") {
  else if($_SESSION['statut'] === "entre") {
     ?>
         <div class="well">
-            <a href="?page=propentre" class="btn btn-success">Proposer sujet</a> 
+           <center> <a href="?page=propentre" class="btn btn-success">Proposer un projet</a> </center>
 
         </div>
 
