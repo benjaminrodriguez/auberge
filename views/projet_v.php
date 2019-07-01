@@ -61,12 +61,13 @@ ob_start(); ?>
                     <a href="?page=v&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-success">voir</a> 
                 </div>
                 <div class="col">
-                    <a href="?page=modifyp&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-primary">modifier</a>
-                </div>
-                <div class="col">
-                    <?php 
-                    if (isset($_SESSION['role']) && $_SESSION['role'] === "prof") {
+                <a href="?page=v&projet=<?php echo $s1[$key]['url'];?>" class="btn btn-info">Consulter</a>
+                    </div>
+                    <div class="col">
+                        <?php 
+                    if (isset($_SESSION['statut']) && $_SESSION['statut'] === "prof") {
                         ?>
+                            <a href="?page=modifyp&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-primary">modifier</a>
                         
                         <?php
                     }
@@ -145,12 +146,13 @@ ob_start(); ?>
                     <a href="?page=v&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-success">voir</a> <!-- pas dispo pas connecte -->
                 </div>
                 <div class="col">
-                    <a href="?page=modifyp&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-primary">modifier</a>
-                </div>
-                <div class="col">
-                <?php 
-                    if (isset($_SESSION['role']) && $_SESSION['role'] === "prof") {
+                <a href="<?php echo $s2[$key]['url'];?>" class="btn btn-info">Consulter</a>
+                    </div>
+                    <div class="col">
+                        <?php 
+                    if (isset($_SESSION['statut']) && $_SESSION['statut'] === "prof") {
                         ?>
+                        <a href="?page=modifyp&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-primary">modifier</a>
                        
                         <?php
                     }

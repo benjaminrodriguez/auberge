@@ -7,8 +7,8 @@
        $data = select_connect($_POST['username'], $_POST['password']);
        sleep(1);
         
-       var_dump($data);
-       echo"fe";
+       //var_dump($data);
+       //echo"fe";
         if (isset($data[0]['id'])) {
             
             
