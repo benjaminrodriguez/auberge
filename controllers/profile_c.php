@@ -23,7 +23,7 @@ if(isset($_POST['menu']) && $_POST['menu'] === "password")
     
     if(isset($_POST['old_password']))
     { 
-        echo'ok';
+        //echo'ok';
         // ENLEVE LES ESPACES DEBUT ET FIN
         $_POST['old_password'] = trim($_POST['old_password']);
         if (!empty($_POST['old_password']))
