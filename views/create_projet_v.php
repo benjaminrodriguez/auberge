@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-<a href="?page=gestion"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Retour</button></a><br><br>git
+<a href="?page=gestion"><button class="btn btn-mini btn-inverse hidden-phone" type="button">Retour</button></a><br><br>
 <div class="well">
   <form action="" method="POST" class="form-example">
   A propos du Projet :

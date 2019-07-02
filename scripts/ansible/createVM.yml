@@ -1,0 +1,27 @@
+# Authentification et connexion au vCenter
+$credentialvCenter =  administrator@IV-ISUAV-VC01.itinet.local
+$vc = Connect-VIServer -Server vca.vmware.lan -Credential $credentialvCenter
+
+# Création de la VM
+New-VM -Name VM_projet `
+    -DiskGB 30 `
+    -DiskStorageFormat Thin `
+    -MemoryGB 1 `
+    -CD `
+    -ResourcePool ("esxip1.vmware.lan") `
+    -GuestId 'windows8guest' `
+    -NetworkName:"VM Network" `
+    -Datastore ("LUNP1")
+
+vmware_deploy:
+    hostname: '{{ vcenter_hostname }}'
+    username: '{{ vcenter_username }}'
+    password: '{{ vcenter_password }}'
+    cluster: Cluster1
+    datastore: vsandatastore
+    name: NewVM
+    networks: "{u'VM Network':u'{{ ProvisioningNetworkLabel }}'}"
+    validate_certs: no
+    power_on: no
+    template: conficS1.yml
+  delegate_to: localhost
