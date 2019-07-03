@@ -59,6 +59,10 @@
         else if ($_GET['page'] == 'propentre')
         {
             require_once('controllers/propentre_c.php');
+        }  
+        else if ($_GET['page'] == 'publier')
+        {
+            require_once('controllers/publier_c.php');
         }    
         else if ($_GET['page'] == 'create_projet') 
         {

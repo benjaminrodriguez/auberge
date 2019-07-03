@@ -45,6 +45,13 @@
                     <a href="?page=v&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-success">voir</a> 
                 
                     <a href="?page=assoc&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-info">associer</a>
+                    <?php
+                    if ($s1[$key]['statut'] !== "affecté") {
+                        ?>
+                        <a href="?page=publier&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-warning">Publier</a>
+                        <?php
+                    }
+                    ?>
                 </div>
                 <br><br>
                 </div>
@@ -95,7 +102,15 @@
                 <div class="col">
                     <a href="?page=v&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-success">voir</a> 
                     <a href="?page=assoc&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-info">associer</a>
+                    <?php
+                    if ($s1[$key]['statut'] !== "affecté") {
+                        ?>
+                        <a href="?page=publier&projet=<?php echo $s2[$key]['id'];?>" class="btn btn-warning">Publier</a>
+                        <?php
+                    }
+                    ?>
                 </div>
+
                 <br><br>
                 </div>
 

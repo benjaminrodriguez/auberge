@@ -78,7 +78,13 @@ $title='Gestion Projets';  ?>
                     <a href="?page=modifyp&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-primary">Modifier</a>
                 </div>
                 <div class="col">
-                    <a href="?page=publier&projet=" class="btn btn-info">Publier</a>
+                    <?php
+                    if ($s1[$key]['statut'] !== "affecté") {
+                        ?>
+                        <a href="?page=publier&projet=<?php echo $s1[$key]['id'];?>" class="btn btn-info">Publier</a>
+                        <?php
+                    }
+                    ?>
                 </div>
                 </div>
                 <br>
