@@ -3,6 +3,7 @@
 
 $s1 = select_projetS(1);
 $s2 = select_projetS(2);
+$s3 = select_projetS(3);
 
 
   
