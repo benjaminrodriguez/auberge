@@ -91,7 +91,7 @@
       else {
         ?>
         <div class="col-sm-1" style="line-height: 0.5; text-align: center; padding-bottom: 1%; padding-top: 1%;border-radius: 20px 20px 0px 0px; margin-bottom: -20px; background: rgba(255, 66, 51, 0.75); margin-right: 35px;">
-          <a href="?page=connectionentreprise" style="color: white;"><img src="./views/img/ent.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Entreprise</a>
+          <a href="?page=connectionentreprise" style="color: white;"><img src="./views/img/ent.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Entreprises</a>
         </div>
         <?php
       }
