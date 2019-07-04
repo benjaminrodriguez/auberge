@@ -33,17 +33,25 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     
     
-    <div class="col-sm-7">
+    <div class="col-sm-6">
         <a class="navbar-brand" href="?"><img src="./views/img/logo2.png" width="145" height="100" class="d-inline-block align-middle" alt="">L'Auberge</a>
     </div>
-    <?php 
-    if (isset($_SESSION['statut']) && $_SESSION['statut'] === "prof"
-    ) {
+    <?php
+    if (isset($_SESSION['statut']) && $_SESSION['statut'] === "prof") 
+    {
       ?>
       <div class="col-sm-1" style="line-height: 0.5; text-align: center; padding-bottom: 1%; padding-top: 1%;border-radius: 20px 20px 0px 0px; margin-bottom: -20px; background: rgba(75, 137, 218, 0.75); margin-right: 25px;">
-        <a href="?page=gestion" style="color: white;"><img src="./views/img/books.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Gestion</a>
+        <a href="?page=gestion" style="color: white;"><img src="./views/img/teach.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Gestion</a>
       </div>
       <?php
+    } 
+    else if (!isset($_SESSION['id'])) {
+      ?>
+        <div class="col-sm-1" style="line-height: 0.5; text-align: center; padding-bottom: 1%; padding-top: 1%;border-radius: 20px 20px 0px 0px; margin-bottom: -20px; background: rgba(255, 195, 0 , 0.75); margin-right: 25px;">
+        <a href="?page=connectionprof" style="color: white;"><img src="./views/img/teach.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Professeur</a>
+      </div>
+      <?php
+    
     } else {
       ?>
       <div class="col-sm-1">
@@ -69,7 +77,7 @@
       else {
         ?>
         <div class="col-sm-1" style="line-height: 0.5; text-align: center; padding-bottom: 1%; padding-top: 1%;border-radius: 20px 20px 0px 0px; margin-bottom: -20px; background: rgba(75, 137, 218, 0.75); margin-right: 25px;">
-          <a href="?page=connectioneleve" style="color: white;"><img src="./views/img/etd.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>IN'TECH/ESIEA</a>
+          <a href="?page=connectioneleve" style="color: white;"><img src="./views/img/etd.png" width="60" height="60" style="display: block; margin-left: auto; margin-right: auto; margin-top: auto; line-height: 0.5;" ><br>Eleve</a>
         </div>
         <?php
       }

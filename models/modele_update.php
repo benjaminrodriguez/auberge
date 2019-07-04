@@ -100,6 +100,5 @@ function upd_projdispo($id){
     ));
 
 }
-
  
 ?>

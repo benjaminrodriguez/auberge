@@ -116,6 +116,10 @@
         {
             require_once('controllers/connection_eleve_c.php');
         }
+        else if ($_GET['page'] == 'connectionprof') 
+        {
+            require_once('controllers/connection_prof_c.php');
+        }
         else if ($_GET['page'] == 'connectionentreprise') 
         {
             require_once('controllers/connection_entre_c.php');

@@ -18,14 +18,14 @@ if (isset($_SESSION['errorconnect'])) {
 <div style="padding-right: 30%; padding-left: 30%;">
 <div class="well" style="padding-right: 5%; padding-left: 5%;padding-top: 5%">
 
-    <form id="form" class="form-signin" action="index.php?page=connectioneleve" method="POST"> 
+    <form id="form" class="form-signin" action="index.php?page=connectionprof" method="POST"> 
         <input type="text" name="username" class="form-control" placeholder="Adresse mail IN'TECH/ESIEA" required autofocus>
         <label for="inputPassword" class="sr-only"></label><br>
         <input type="password" name="password" value="" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
         <br><center><button class=" btn btn-success" style="font-size:1.2em; text-align: center">Connexion</button>
     </form>
 
-    <a href =".?page=firstconnect"  button class=" btn btn-success" style="font-size:1.2em; text-align: center">Inscription Élève</button></center></a>
+    <a href =".?page=firstconnect"  button class=" btn btn-success" style="font-size:1.2em; text-align: center">Inscription Professeur</button></center></a>
     </div>
 <div>
        
