@@ -22,7 +22,7 @@ if (isset($_SESSION['errorconnect'])) {
         <input type="text"  placeholder="Nom" name="nom" required><br>
         <input type="text"  placeholder="Prénom" name="prenom" required><br>
         <input type="password"  placeholder="Mot de passe" name="psw" required><br>
-        <label for="email"></label><input type="text" name="email" id="mail" class="champ" placeholder="Adresse email"/ required><br>
+        <label for="email"></label><input type="text" name="email" id="mail" class="champ" placeholder="Adresse mail"/ required><br>
         <input type="tel" name="tel"  placeholder="Téléphone"/ required><br>
         <input type="text" name="entre"  placeholder="Entreprise"/ required>
        
